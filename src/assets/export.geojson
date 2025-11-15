@@ -6669,7 +6669,9 @@
       "properties": {
         "@id": "way/1110232084",
         "landuse": "residential",
-        "residential": "apartments"
+        "residential": "apartments",
+        "name": "北区宿舍(在装修)",
+        "description": "有学生住还搞装修依托构式"
       },
       "geometry": {
         "type": "Polygon",
