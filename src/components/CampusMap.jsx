@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-export default function CampusMap() {
+export default function CampusMap({onSelectBuilding}) {
   const [geoData, setGeoData] = useState(null);
   const geoJsonRef = useRef();
 
@@ -49,6 +49,20 @@ export default function CampusMap() {
         fillOpacity: 0.15,
       });
       layer.closePopup();
+    });
+
+    // 建筑信息
+    const buildingInfo = {
+      name:displayName,
+      description: displayDescription,
+      type: layer.feature?.properties?.building,
+      raw: layer.feature?.properties
+    };
+    layer.on('click',()=>{
+      // 把值传递给父组件
+      if(typeof onSelectBuilding === 'function'){
+        onSelectBuilding(buildingInfo);
+      }
     });
   };
 
@@ -120,12 +134,13 @@ export default function CampusMap() {
   };
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    // 重要：使用父容器的宽高（不要使用100vw/100vh）
+    <div className="w-full h-full rounded-lg">
       <MapContainer
         center={[30.76625, 103.98360]}
-        zoom={17}
-        scrollWheelZoom
-        style={{ height: '100%', width: '100%' }}
+        zoom={16}
+        scrollWheelZoom={true}
+        className='w-full h-full' // 使 MapContainer 填充父容器
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
