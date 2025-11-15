@@ -72,7 +72,7 @@
       "properties": {
         "@id": "relation/12265385",
         "building": "school",
-        "name": "西南交大犀浦3号教学楼",
+        "name": "3号教学楼（含事务办理中心）",
         "type": "multipolygon",
         "description": "学院（主要使用对象）：全校各学院共用\n功能（简述）：3号教学楼堪称西南交通大学校园的标志性建筑，是学校建校历史上投资规模最大、建筑科技含量最高、功能最为完整的宏伟建筑。坐落于校园东门入口的黄金位置，该楼以其挺拔的塔楼和开放的裙楼设计，充分展现了现代大学的气势。建筑内部设计理念先进，配备了28间智慧教室、48间多媒体教室、823间教师工作间和办公用房，拥有国际化的教学设施和人性化的学习空间。该楼不仅是全校各专业学生的教学中心，更是学校教学改革创新和现代化教育实践的重要示范，代表了当代中国高等教育的发展方向。\n数据：地上裙楼5层、塔楼17层、地下2层，建筑面积约76375㎡，可容纳5000+人"
       },
@@ -2090,7 +2090,7 @@
       "type": "Feature",
       "properties": {
         "@id": "way/207570532",
-        "building": "yes",
+        "building": "gym",
         "leisure": "stadium",
         "name": "体育馆",
         "name:en": "District Stadium",
@@ -2246,7 +2246,7 @@
       "type": "Feature",
       "properties": {
         "@id": "way/207596095",
-        "building": "yes",
+        "building": "gym",
         "leisure": "swimming_pool",
         "name": "游泳馆",
         "name:en": "Swimming pool",
@@ -2298,7 +2298,7 @@
       "type": "Feature",
       "properties": {
         "@id": "way/207596096",
-        "building": "yes",
+        "building": "gym",
         "leisure": "sports_centre",
         "name": "健美操馆",
         "name:en": "Aerobics Hall",
@@ -2342,7 +2342,7 @@
       "type": "Feature",
       "properties": {
         "@id": "way/207596101",
-        "building": "yes",
+        "building": "gym",
         "leisure": "pitch",
         "name": "羽毛球馆",
         "name:en": "Badminton court",
@@ -2391,7 +2391,7 @@
       "type": "Feature",
       "properties": {
         "@id": "way/207596103",
-        "building": "yes",
+        "building": "gym",
         "leisure": "pitch",
         "name": "乒乓球馆",
         "name:en": "Pingpong Hall",
@@ -4347,7 +4347,7 @@
       "properties": {
         "@id": "way/1098786977",
         "amenity": "library",
-        "building": "yes",
+        "building": "library",
         "layer": "1",
         "name": "西南交通大学犀浦校区图书馆",
         "name:zh": "图书馆",
