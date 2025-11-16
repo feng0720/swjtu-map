@@ -174,8 +174,16 @@ export default function BikeRoutePlanner({ isOpen, onClose, mapRef, language = '
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white dark:bg-slate-900 rounded-lg shadow-xl w-full max-w-md mx-4 max-h-[80vh] overflow-hidden flex flex-col">
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pointer-events-auto"
+      style={{ zIndex: 9999 }}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          handleClose();
+        }
+      }}
+    >
+      <div className="bg-white dark:bg-slate-900 rounded-lg shadow-2xl w-full max-w-md mx-4 max-h-[80vh] overflow-hidden flex flex-col pointer-events-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
