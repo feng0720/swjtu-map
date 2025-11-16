@@ -1,107 +1,73 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X } from 'lucide-react';
 
-// 预定义的6条路线
-const PREDEFINED_ROUTES = [
-  {
-    id: 1,
-    start: '1号教学楼',
-    end: '北区宿舍',
-    coordinates: [
-      [30.76625, 103.98360],
-      [30.76650, 103.98400],
-      [30.76700, 103.98450],
-      [30.76750, 103.98500],
-      [30.76800, 103.98550],
-      [30.76850, 103.98600],
-      [30.76900, 103.98650],
-    ]
-  },
-  {
-    id: 2,
-    start: '2号教学楼',
-    end: '鸿哲斋4号楼',
-    coordinates: [
-      [30.76625, 103.98360],
-      [30.76580, 103.98380],
-      [30.76530, 103.98400],
-      [30.76480, 103.98420],
-      [30.76430, 103.98440],
-      [30.76380, 103.98460],
-    ]
-  },
-  {
-    id: 3,
-    start: '3号教学楼',
-    end: '北区宿舍',
-    coordinates: [
-      [30.76625, 103.98360],
-      [30.76610, 103.98340],
-      [30.76595, 103.98320],
-      [30.76580, 103.98300],
-      [30.76565, 103.98280],
-      [30.76750, 103.98500],
-      [30.76850, 103.98600],
-    ]
-  },
-  {
-    id: 4,
-    start: '北区宿舍',
-    end: '1号教学楼',
-    coordinates: [
-      [30.76850, 103.98600],
-      [30.76800, 103.98550],
-      [30.76750, 103.98500],
-      [30.76700, 103.98450],
-      [30.76650, 103.98400],
-      [30.76625, 103.98360],
-    ]
-  },
-  {
-    id: 5,
-    start: '鸿哲斋4号楼',
-    end: '2号教学楼',
-    coordinates: [
-      [30.76380, 103.98460],
-      [30.76430, 103.98440],
-      [30.76480, 103.98420],
-      [30.76530, 103.98400],
-      [30.76580, 103.98380],
-      [30.76625, 103.98360],
-    ]
-  },
-  {
-    id: 6,
-    start: '北区宿舍',
-    end: '鸿哲斋4号楼',
-    coordinates: [
-      [30.76850, 103.98600],
-      [30.76820, 103.98570],
-      [30.76790, 103.98540],
-      [30.76760, 103.98510],
-      [30.76730, 103.98480],
-      [30.76700, 103.98450],
-      [30.76650, 103.98420],
-      [30.76600, 103.98390],
-      [30.76550, 103.98360],
-      [30.76380, 103.98460],
-    ]
-  },
-];
-
 export default function BikeRoutePlanner({ isOpen, onClose, mapRef, language = 'zh' }) {
-  const [step, setStep] = useState(1); // 1: 时间和目的, 2: 选择路线
+  const [step, setStep] = useState(1); // 1: 时间和目的, 2: 选择起终点
   const [timeOfDay, setTimeOfDay] = useState(null);
   const [purpose, setPurpose] = useState(null);
+  const [selectedRoute, setSelectedRoute] = useState(null);
   const routeLineRef = useRef(null);
   const previousHighlightsRef = useRef({ start: null, end: null });
 
-  const handleClose = () => {
-    setStep(1);
-    setTimeOfDay(null);
-    setPurpose(null);
-    clearRoute();
-    onClose();
+  // 简化的路线 - 只有4条（上学北区、上学鸿哲、放学北区、放学鸿哲）
+  const getRoutes = () => {
+    if (!timeOfDay || !purpose) return [];
+
+    // 使用实际的教学楼、北区宿舍、鸿哲斋位置（大约坐标）
+    const teachingBuildingsArea = [30.76625, 103.98360];
+    const northDormArea = [30.77000, 103.98600];
+    const hongzheArea = [30.76200, 103.98200];
+
+    // 根据时间和目的生成简单的直线路线
+    if (purpose === 'school') {
+      // 上学：从宿舍去教学楼
+      return [
+        {
+          id: 1,
+          start: '北区宿舍',
+          end: '1号教学楼',
+          coordinates: [
+            northDormArea,
+            [(northDormArea[0] + teachingBuildingsArea[0]) / 2, (northDormArea[1] + teachingBuildingsArea[1]) / 2],
+            teachingBuildingsArea,
+          ]
+        },
+        {
+          id: 2,
+          start: '鸿哲斋',
+          end: '1号教学楼',
+          coordinates: [
+            hongzheArea,
+            [(hongzheArea[0] + teachingBuildingsArea[0]) / 2, (hongzheArea[1] + teachingBuildingsArea[1]) / 2],
+            teachingBuildingsArea,
+          ]
+        },
+      ];
+    } else {
+      // 放学：从教学楼去宿舍
+      return [
+        {
+          id: 3,
+          start: '1号教学楼',
+          end: '北区宿舍',
+          coordinates: [
+            teachingBuildingsArea,
+            [(northDormArea[0] + teachingBuildingsArea[0]) / 2, (northDormArea[1] + teachingBuildingsArea[1]) / 2],
+            northDormArea,
+          ]
+        },
+        {
+          id: 4,
+          start: '1号教学楼',
+          end: '鸿哲斋',
+          coordinates: [
+            teachingBuildingsArea,
+            [(hongzheArea[0] + teachingBuildingsArea[0]) / 2, (hongzheArea[1] + teachingBuildingsArea[1]) / 2],
+            hongzheArea,
+          ]
+        },
+      ];
+    }
   };
 
   const clearRoute = () => {
@@ -169,9 +135,26 @@ export default function BikeRoutePlanner({ isOpen, onClose, mapRef, language = '
         console.warn('地图居中失败');
       }
     }
+
+    setSelectedRoute(route.id);
+
+    // 自动关闭窗口以显示路线
+    setTimeout(() => {
+      handleClose();
+    }, 300);
+  };
+
+  const handleClose = () => {
+    setStep(1);
+    setTimeOfDay(null);
+    setPurpose(null);
+    setSelectedRoute(null);
+    onClose();
   };
 
   if (!isOpen) return null;
+
+  const routes = getRoutes();
 
   return (
     <div
@@ -271,19 +254,25 @@ export default function BikeRoutePlanner({ isOpen, onClose, mapRef, language = '
             </div>
           ) : (
             <div className="space-y-2">
-              {PREDEFINED_ROUTES.map((route) => (
-                <button
-                  key={route.id}
-                  onClick={() => handleRouteSelect(route)}
-                  className="w-full p-4 rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-400 bg-gray-50 dark:bg-slate-800 text-left transition-all"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="text-blue-600 dark:text-blue-400 font-medium">{route.start}</span>
-                    <span className="text-gray-600 dark:text-gray-400">→</span>
-                    <span className="text-red-600 dark:text-red-400 font-medium">{route.end}</span>
-                  </div>
-                </button>
-              ))}
+              {routes.length > 0 ? (
+                routes.map((route) => (
+                  <button
+                    key={route.id}
+                    onClick={() => handleRouteSelect(route)}
+                    className="w-full p-4 rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-400 bg-gray-50 dark:bg-slate-800 text-left transition-all"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-blue-600 dark:text-blue-400 font-medium">{route.start}</span>
+                      <span className="text-gray-600 dark:text-gray-400">→</span>
+                      <span className="text-red-600 dark:text-red-400 font-medium">{route.end}</span>
+                    </div>
+                  </button>
+                ))
+              ) : (
+                <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+                  {language === 'en' ? 'No routes available' : '没有可用路线'}
+                </div>
+              )}
             </div>
           )}
         </div>
