@@ -3,7 +3,7 @@ import { Sun, Moon, Globe, Box } from 'lucide-react';
 
 export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, on3DToggle, is3D }) {
   return (
-    <div className="bg-blue-600 dark:bg-blue-900 text-white shadow-lg">
+    <div className="bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-600 dark:from-sky-950 dark:via-blue-950 dark:to-indigo-950 text-white shadow-lg">
       <div className="px-6 py-4 flex items-center justify-between">
         {/* 左侧：标题和学校名 */}
         <div className="flex items-center gap-3">
@@ -19,20 +19,20 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           {/* 光暗转换 */}
           <button
             onClick={onThemeToggle}
-            className="p-2 hover:bg-blue-500 rounded-lg transition-colors"
+            className="p-2 rounded-lg transition-colors"
             title={theme === 'light' ? '切换到暗色' : '切换到亮色'}
           >
             {theme === 'light' ? (
-              <Moon className="w-5 h-5" />
+              <Moon className="w-5 h-5 hover:text-sky-300 hover:scale-125 duration-300 transition-all" />
             ) : (
-              <Sun className="w-5 h-5" />
+              <Sun className="w-5 h-5 hover:text-orange-500 hover:scale-125 duration-300 transition-all" />
             )}
           </button>
 
           {/* 中文/EN切换 */}
           <button
             onClick={onLanguageToggle}
-            className="p-2 hover:bg-blue-500 rounded-lg transition-colors flex items-center gap-1"
+            className="p-2 hover:scale-125 rounded-lg flex items-center gap-1 duration-300 transition-all"
             title="切换语言"
           >
             <Globe className="w-5 h-5" />
@@ -42,7 +42,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           {/* 3D/2D切换 */}
           <button
             onClick={on3DToggle}
-            className="p-2 hover:bg-blue-500 rounded-lg transition-colors flex items-center gap-1"
+            className="p-2 rounded-lg flex items-center gap-1 transition-all hover:scale-125 duration-300"
             title={is3D ? '切换到2D' : '切换到3D'}
           >
             <Box className="w-5 h-5" />

@@ -4,8 +4,8 @@ import BuildingInfo from './BuildingInfo';
 import SearchBuildings from './SearchBuildings';
 import RouteNavigation from './RouteNavigation';
 
-export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData }) {
-  const [activeTab, setActiveTab] = useState('navigation'); // 'navigation', 'route', 'search'
+export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData,activeTab,setActiveTab,start,end }) {
+  
 
   return (
     <div className="w-[350px] bg-white dark:bg-slate-900 border-2 border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden shadow-lg flex flex-col">
@@ -62,9 +62,11 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
 
         {activeTab === 'route' && geoData && (
           <RouteNavigation
-            key="route-navigation"
+            key={`route-${start || 'none'}-${end || 'none'}`}
             mapRef={mapRef}
             geoData={geoData}
+            start={start}
+            end={end}
           />
         )}
 

@@ -12,11 +12,14 @@ function MapEventsHandler({ mapContainerRef }) {
   return null;
 }
 
-const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLoaded}, ref) {
+const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, setEnd, activeTab, language }, ref) {
   const [geoData, setGeoData] = useState(null);
   const geoJsonRef = useRef();
   const mapContainerRef = useRef(null); // 存储地图实例
   const buildingLayersRef = useRef(new Map()); // 存储建筑名称到图层的映射
+  const clickRef = useRef(0); // 设置点击选择起点还是终点
+  const activeTabRef = useRef(activeTab);
+  const languageRef = useRef(language);
 
   // 加载 GeoJSON
   useEffect(() => {
@@ -26,10 +29,34 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
       .catch(err => console.error(err));
   }, []);
 
+  useEffect(() => {
+    languageRef.current = language;
+  }, [language]);
+
+  useEffect(() => {
+    activeTabRef.current = activeTab;
+  }, [activeTab]);
+
+  // 当 language 改变时更新 popup 内容
+  useEffect(() => {
+    buildingLayersRef.current.forEach((layers, buildingName) => {
+      layers.forEach(layer => {
+        const feature = layer.feature;
+        const description = feature?.properties?.description;
+        const description_en = feature?.properties?.description_en;
+        const displayDescription = languageRef.current === 'zh' ? description || '' : description_en || '';
+        layer.setPopupContent(`<b>${buildingName}</b>${displayDescription ? `<br>${displayDescription}` : ''}`);
+      });
+    });
+  }, [language]);
+
   // 绑定每个图层事件
-  const bindLayerEvents = (layer, featureName, parentName = null, description) => {
+  const bindLayerEvents = (layer, featureName, parentName = null) => {
     const displayName = featureName || parentName || '未命名建筑';
-    const displayDescription = description ? description : '';
+    const feature = layer.feature;
+    const description = feature?.properties?.description;
+    const description_en = feature?.properties?.description_en;
+    const displayDescription = languageRef.current === 'zh' ? description || '' : description_en || '';
 
     // 设置初始样式
     layer.setStyle({
@@ -40,6 +67,10 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
       fill: true
     });
 
+    // 绑定 popup （只绑定一次）
+    layer.bindPopup(`<b>${displayName}</b>${displayDescription ? `<br>${displayDescription}` : ''}`);
+
+    // 鼠标事件
     layer.on('mouseover', (e) => {
       L.DomEvent.stopPropagation(e);
       layer.setStyle({
@@ -48,7 +79,7 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
         fillColor: '#2563eb',
         fillOpacity: 0.5,
       });
-      layer.bindPopup(`<b>${displayName}</b>${displayDescription ? `<br>${displayDescription}` : ''}`).openPopup(e.latlng);
+      layer.openPopup(e.latlng); // 只打开，不重新绑定
     });
 
     layer.on('mouseout', (e) => {
@@ -64,10 +95,10 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
 
     // 建筑信息
     const buildingInfo = {
-      name:displayName,
+      name: displayName,
       description: displayDescription,
-      type: layer.feature?.properties?.building,
-      raw: layer.feature?.properties
+      type: feature?.properties?.building,
+      raw: feature?.properties
     };
 
     // 存储图层引用
@@ -76,22 +107,33 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
     }
     buildingLayersRef.current.get(displayName).push(layer);
 
-    layer.on('click',()=>{
-      // 把值传递给父组件
-      if(typeof onSelectBuilding === 'function'){
+    layer.on('click', () => {
+      if (typeof onSelectBuilding === 'function') {
         onSelectBuilding(buildingInfo);
+      }
+
+      if (activeTabRef.current === 'route') {
+        if (clickRef.current === 0) {
+          setStart(buildingInfo.name);
+          clickRef.current = 1;
+          console.log(`start:${buildingInfo.name}`);
+        } else {
+          setEnd(buildingInfo.name);
+          clickRef.current = 0;
+          console.log(`end:${buildingInfo.name}`);
+        }
       }
     });
   };
 
   // 处理 MultiPolygon / Relation
-  const handleMultiPolygon = (feature, layer, featureName, description) => {
+  const handleMultiPolygon = (feature, layer, featureName) => {
     if (layer.eachLayer) {
       layer.eachLayer(subLayer => {
-        bindLayerEvents(subLayer, featureName, featureName, description);
+        bindLayerEvents(subLayer, featureName, featureName);
       });
     } else {
-      bindLayerEvents(layer, featureName, null, description);
+      bindLayerEvents(layer, featureName, null);
     }
   };
 
@@ -107,7 +149,6 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
   // 给每个 Feature 绑定事件
   const onEachFeature = (feature, layer) => {
     const name = getFeatureName(feature);
-    const description = feature.properties?.description;
     const isSchool = feature.properties?.amenity === 'university';
 
     if (isSchool) {
@@ -135,7 +176,7 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
     }
 
     // 普通建筑
-    handleMultiPolygon(feature, layer, name, description);
+    handleMultiPolygon(feature, layer, name);
   };
 
   // 样式函数
@@ -151,9 +192,8 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
     };
   };
 
-  // 暴露方法供父组件调用
+  // 暴露方法
   useImperativeHandle(ref, () => ({
-    // 搜索建筑并高亮
     highlightBuilding: (buildingName) => {
       const layers = buildingLayersRef.current.get(buildingName);
       if (layers) {
@@ -169,7 +209,6 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
       }
       return false;
     },
-    // 自定义颜色高亮建筑（用于路线规划）
     highlightBuildingWithColor: (buildingName, color) => {
       const layers = buildingLayersRef.current.get(buildingName);
       if (layers) {
@@ -185,7 +224,6 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
       }
       return false;
     },
-    // 清除高亮
     clearHighlight: (buildingName) => {
       const layers = buildingLayersRef.current.get(buildingName);
       if (layers) {
@@ -199,15 +237,8 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
         });
       }
     },
-    // 获取所有建筑列表
-    getAllBuildings: () => {
-      return Array.from(buildingLayersRef.current.keys());
-    },
-    // 获取GeoJSON数据
-    getGeoData: () => {
-      return geoData;
-    },
-    // 绘制路线
+    getAllBuildings: () => Array.from(buildingLayersRef.current.keys()),
+    getGeoData: () => geoData,
     drawRoute: (coordinates) => {
       const map = mapContainerRef.current;
       if (map) {
@@ -218,14 +249,11 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
           lineCap: 'round',
           lineJoin: 'round'
         }).addTo(map);
-
-        // 自动调整地图视图以显示整条路线
         map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
         return polyline;
       }
       return null;
     },
-    // 移除路线
     removeRoute: (routeLine) => {
       if (routeLine && routeLine.remove) {
         routeLine.remove();
@@ -234,13 +262,12 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
   }));
 
   return (
-    // 重要：使用父容器的宽高（不要使用100vw/100vh）
     <div className="w-full h-full rounded-lg">
       <MapContainer
         center={[30.76625, 103.98360]}
         zoom={16}
         scrollWheelZoom={true}
-        className='w-full h-full' // 使 MapContainer 填充父容器
+        className='w-full h-full'
       >
         <MapEventsHandler mapContainerRef={mapContainerRef} />
         <TileLayer
@@ -270,5 +297,4 @@ const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLo
 });
 
 CampusMap.displayName = 'CampusMap';
-
 export default CampusMap;

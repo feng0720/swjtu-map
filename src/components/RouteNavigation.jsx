@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search, X, MapPin, ArrowRight } from 'lucide-react';
 
-export default function RouteNavigation({ mapRef, geoData }) {
+export default function RouteNavigation({ mapRef, geoData, start, end}) {
   const [startBuilding, setStartBuilding] = useState(null);
   const [endBuilding, setEndBuilding] = useState(null);
   const [startQuery, setStartQuery] = useState('');
@@ -26,6 +26,21 @@ export default function RouteNavigation({ mapRef, geoData }) {
 
     return () => clearTimeout(timer);
   }, [mapRef]);
+
+  // 初始化：如果用户没有输入，就用父组件传入的 start / end
+  useEffect(() => {
+  if (start) {
+    handleSelectStart(start);
+  }
+  }, [start]);   
+
+  useEffect(() => {
+    if (end) {
+      handleSelectEnd(end);
+    }
+  }, [end]);
+
+
 
   // 获取建筑的中心坐标
   const getBuildingCoordinates = (buildingName) => {

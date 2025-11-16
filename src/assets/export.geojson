@@ -14,6 +14,7 @@
         "name:zh": "艺术造型实验中心",
         "office": "research",
         "type": "multipolygon",
+        "description_en": "Name: Art Modeling Experiment Center\nBrief Description: An important base for cultivating students' artistic creativity and hands-on ability. The center contains multiple specialized teaching spaces including architectural model workshops, sculpture studios, and manual craft laboratories. It provides a platform for creative design and practical training for students majoring in Architecture, Urban Planning, Art Design and other related disciplines.\nFunctional Areas: Architectural Model Room, Design Prototype Workshop, Manual Craft Laboratory, Creative Exhibition Hall\nTeaching Content: Architectural model making, architectural rendering drawing, industrial design, urban planning models\nFeatured Programs: Local Design Competitions, Graduation Project Training, Industry-University Cooperation Projects\nTarget Majors: Architecture, Urban Planning, Industrial Design, Landscape Architecture, Art Design",
         "description": "名称：艺术造型实验中心\n简述：培养学生艺术创意和动手能力的重要基地。中心拥有建筑模型工坊、雕塑工作室、手工实验室等多个专业教学空间。为建筑学、城市规划、艺术设计等专业学生提供创意设计和实践训练的平台。\n功能区域：建筑模型室、设计草模工坊、手工技艺实验室、创意展示厅\n教学内容：建筑模型制作、建筑表现图绘制、工业设计、城市规划模型\n特色项目：同城设计竞赛、毕业设计实训、校企合作项目\n面向专业：建筑学、城市规划、工业设计、景观建筑、艺术设计"
       },
       "geometry": {
@@ -74,6 +75,7 @@
         "building": "school",
         "name": "3号教学楼（含事务办理中心）",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): Shared by all schools of the university.\nFunction (Brief Description): Building No. 3 is a landmark structure on the Southwest Jiaotong University campus, representing the largest investment, highest construction technology content, and most comprehensive functionality in the university's history. Located at the prime site near the campus's east gate entrance, the building, with its tall tower and open podium design, fully embodies the imposing presence of a modern university. Its interior is based on an advanced design concept, equipped with 28 smart classrooms, 48 multimedia classrooms, 823 faculty workspaces and offices, featuring international-standard teaching facilities and user-friendly learning spaces. The building serves not only as a teaching center for students from all majors but also as a significant demonstration of the university's teaching reform, innovation, and modern educational practices, representing the development direction of contemporary higher education in China.\nData: 5-story above-ground podium, 17-story tower, 2 underground floors, total floor area approximately 76,375 sqm, capacity for 5,000+ people.",
         "description": "学院（主要使用对象）：全校各学院共用\n功能（简述）：3号教学楼堪称西南交通大学校园的标志性建筑，是学校建校历史上投资规模最大、建筑科技含量最高、功能最为完整的宏伟建筑。坐落于校园东门入口的黄金位置，该楼以其挺拔的塔楼和开放的裙楼设计，充分展现了现代大学的气势。建筑内部设计理念先进，配备了28间智慧教室、48间多媒体教室、823间教师工作间和办公用房，拥有国际化的教学设施和人性化的学习空间。该楼不仅是全校各专业学生的教学中心，更是学校教学改革创新和现代化教育实践的重要示范，代表了当代中国高等教育的发展方向。\n数据：地上裙楼5层、塔楼17层、地下2层，建筑面积约76375㎡，可容纳5000+人"
       },
       "geometry": {
@@ -195,6 +197,7 @@
         "name": "1号教学楼",
         "name:en": "Teaching Building 1",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): School of Transportation, School of Aeronautics, School of Civil Engineering, and other schools\nFunction (Brief Description): As the oldest and most prestigious landmark teaching building on campus, Building No. 1 has witnessed the development history of Southwest Jiaotong University. It undertakes the main teaching tasks for multiple foundational courses, laying a solid theoretical foundation for students. The interior features complete functionality, equipped with a spacious and bright independent learning center, several advanced multimedia classrooms, and specialized computer laboratories, creating an elegant and comfortable learning atmosphere. It is not only a hall for knowledge transmission but also an important hub for teacher-student interaction, having cultivated generations of outstanding transportation professionals over the years.\nData: Approximately 4 floors, construction area of about 15,000 sqm, capacity for 2,000+ people.",
         "description": "学院（主要使用对象）：交通运输学院、航空学院、土木学院等多个学院\n功能（简述）：作为学校历史最悠久、最富盛名的标志性教学建筑，1号教学楼见证了西南交大的发展历程。该楼承担着学校多个基础课程的主要教学任务，为广大学生奠定扎实的理论基础。建筑内部功能完整，配备了宽敞明亮的自主学习中心、多间设备先进的多媒体教室和专业的计算机实验室，为学生营造了优雅舒适的学习氛围。这里不仅是知识传递的殿堂，更是师生互动交流的重要枢纽，多年来培养了一批又一批优秀的交通运输人才。\n数据：约4层，建筑面积约15000㎡，可容纳2000+人"
       },
       "geometry": {
@@ -455,6 +458,7 @@
         "name:en": "Teaching Building 9",
         "short_name": "九教",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): School of Transportation, School of Mechanical Engineering, School of Electrical Engineering, and other schools\nFunction (Brief Description): Building No. 9 is the university's newest modern teaching facility, representing the highest level and latest concepts in contemporary higher education infrastructure. The building features an advanced architectural design concept and a grand exterior, with scientifically planned interior spaces and a rational functional layout. It is equipped with state-of-the-art smart classroom systems, advanced multimedia classrooms, specialized laboratories, and other first-class teaching facilities, incorporating information-based teaching methods and modern management systems. This building provides high-quality teaching and learning environments for students from multiple schools, fully demonstrating the university's commitment to educational quality and its forward-looking vision for future development. It stands as an important symbol and achievement of the modernization of the university's education and teaching.\nData: Approximately 7 floors, construction area of about 22,000 sqm, capacity for 2,800+ people.",
         "description": "学院（主要使用对象）：交通运输学院、机械学院、电气学院等多个学院\n功能（简述）：9号教学楼是学校最新建成的现代化教学建筑，代表了当代高等教育设施的最高水平和最新理念。该楼建筑设计理念先进、外观气势恢宏，内部空间科学规划、功能布局合理。楼内配备了最新的智慧教室系统、先进的多媒体教室、专业的实验室等一流的教学设施，引入了信息化教学手段和现代化管理系统。该楼为多个学院的学生提供了优质的教学和学习环境，充分展现了学校对教育质量的执着追求和对未来发展的深远眼光，是学校教育教学现代化的重要标志和成果。\n数据：约7层，建筑面积约22000㎡，可容纳2800+人"
       },
       "geometry": {
@@ -619,6 +623,7 @@
         "name": "2号教学楼",
         "name:en": "Teaching Building 2",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): School of Mechanical Engineering, School of Electrical Engineering, School of Information Science and Technology, and other schools\nFunction (Brief Description): Building No. 2 is an important teaching center of the university, bringing together several schools with distinct engineering characteristics. Renowned for its large scale and comprehensive facilities, the building features scientifically planned interior spaces and numerous fully functional teaching venues. It is equipped with modern multimedia classrooms, various specialized laboratories, and spacious faculty offices, fully meeting the teaching needs of both fundamental theoretical courses and specialized curricula. Here, students can not only delve into theoretical knowledge but also engage in professional experimental practices, achieving a true integration of theory and practice. This building has witnessed the continuous innovation and refinement of the university's teaching models, making it an indispensable component of the university's educational system.\nData: Approximately 5 floors, construction area of about 18,000 sqm, capacity for 1,800+ people.",
         "description": "学院（主要使用对象）：机械学院、电气学院、信息学院等多个学院\n功能（简述）：2号教学楼是学校重要的教学中心，汇聚了工科特色鲜明的多个学院。该楼以其规模宏大、设施完善而闻名，内部空间布局科学合理，拥有众多功能齐全的教学场所。楼内配备了现代化的多媒体教室、各类专业实验室和宽敞的师生办公室，充分满足了基础理论课程和专业课程的教学需求。在这里，学生既能够深入学习理论知识，又能够进行专业的实验实践，真正实现了理论与实践的有机结合。该楼见证了学校教学模式的不断创新和完善，是学校教学体系中不可或缺的重要组成部分。\n数据：约5层，建筑面积约18000㎡，可容纳1800+人"
       },
       "geometry": {
@@ -838,6 +843,7 @@
         "name": "7号教学楼",
         "name:en": "Teaching Building 7",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): All schools of the university\nFunction (Brief Description): Building No. 7 is located in a prime position in the northern part of the campus, serving as a key physical载体 for the university's information technology strategy. The building is notable for its crucial role in informatization construction. The first and second floors house the university's public computer labs and computing center, boasting strong computational power and data processing capabilities that provide robust technical support for the university's teaching, research, and administrative management. The building is also equipped with multiple versatile classrooms, bright and spacious self-study rooms, and comfortable faculty offices, offering comprehensive working and learning spaces for teachers and students. In the information age, this building plays an indispensable role in promoting the university's digital transformation and building a smart campus.\nData: Approximately 5 floors, construction area of about 12,000 sqm, capacity for 1,600+ people.",
         "description": "学院（主要使用对象）：全校各学院\n功能（简述）：7号教学楼坐落在校园北区的黄金位置，是学校信息技术战略的重要物理载体。该楼以其在信息化建设中的关键作用而备受瞩目，建筑的一层和二层设有学校的公共机房和计算中心，拥有强大的计算能力和数据处理能力，为全校的教学、科研和行政管理工作提供了强有力的技术支撑。楼内还配备了多个功能丰富的教室、宽敞明亮的自习室和舒适的教师办公室，为师生提供了完整的工作和学习空间。在信息时代，该楼在推动学校数字化转型和建设智慧校园中发挥了不可替代的重要作用。\n数据：约5层，建筑面积约12000㎡，可容纳1600+人"
       },
       "geometry": {
@@ -931,6 +937,7 @@
         "name": "5号教学楼",
         "name:en": "Teaching Building 5",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): Department of Mechanics and related engineering mechanics disciplines\nFunction (Brief Description): Building No. 5 serves as an important teaching and research base for the university's mechanics disciplines, fully demonstrating the university's outstanding achievements and disciplinary advantages in the field of mechanics. The building stands out on campus for its specialized and high-end characteristics, equipped with professional mechanics laboratories, fluid mechanics experiment center, structural mechanics laboratory, and other advanced teaching and research facilities. These facilities not only provide students with comprehensive experimental teaching conditions but also offer strong support for faculty scientific research. Here, students can learn systematic theoretical knowledge of mechanics while conducting in-depth scientific experiments, truly achieving the organic integration of theory and practice, teaching and research, and cultivating numerous outstanding professionals in the field of mechanics.\nData: Approximately 6 floors, construction area of about 16,000 sqm, capacity for 2,200+ people.",
         "description": "学院（主要使用对象）：力学系及工程力学相关学科\n功能（简述）：5号教学楼是学校力学学科的重要教学和科研基地，充分展现了学校在力学领域的卓越成就和学科优势。该楼以其专业化、高端化的特点而在校园中独树一帜，配备了专业的力学实验室、流体力学实验中心、结构力学实验室等先进的教学科研设施。这些设施不仅为学生提供了完整的实验教学条件，也为教师的科学研究提供了有力支撑。在这里，学生既能够学习系统的力学理论知识，又能够进行深入的科学实验，真正实现了理论与实践、教学与科研的有机统一，培养了众多优秀的力学专业人才。\n数据：约6层，建筑面积约16000㎡，可容纳2200+人"
       },
       "geometry": {
@@ -1127,6 +1134,7 @@
         "name": "4号教学楼",
         "name:en": "Teaching Building 4",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): School of Political Science, School of Civil Engineering, School of Geoscience and Environmental Engineering\nFunction (Brief Description): Building No. 4 is the largest and most functionally comprehensive teaching building in the Xipu Campus, renowned throughout the campus for its massive capacity and complete functionality. The building brings together offices and teaching spaces for multiple schools, integrating teaching, research, administration, and cultural exhibition, fully embodying the characteristics of a modern comprehensive university building. It contains a large number of multimedia classrooms and various specialized laboratories, providing students with first-class learning conditions. Particularly noteworthy is its function as the university history museum, making it an important showcase window for the university's history and culture. Here, students can not only engage in learning but also learn about the university's glorious traditions and development history, achieving an organic integration of teaching and cultural heritage.\nData: Approximately 8 floors, construction area of about 25,000 sqm, capacity for 3,500+ people.",
         "description": "学院（主要使用对象）：政治学院、土木学院、地球科学与环境工程学院\n功能（简述）：4号教学楼是犀浦校区规模最宏大、功能最为丰富的教学建筑，以其容纳人数众多和功能完整而享誉校园。该楼汇聚了多个学院的办公室和教学场所，集教学、科研、行政、文化展示于一体，充分体现了现代综合型大学建筑的特点。楼内拥有数量众多的多媒体教室、各类专业实验室，为学生提供了一流的学习条件。特别是其承载的校史馆功能，使其成为学校历史文化的重要展示窗口，学生在这里既能进行学习，又能了解学校的光荣传统和发展历程，形成了教学与文化传承的有机融合。\n数据：约8层，建筑面积约25000㎡，可容纳3500+人"
       },
       "geometry": {
@@ -1304,6 +1312,7 @@
         "name": "综合楼",
         "name:en": "Office building",
         "type": "multipolygon",
+        "description_en": "Name: Administration Building\nBrief Description: An important center for the university's administration and public services, housing multiple functional departments. The building contains key offices such as the President's Office, Academic Affairs Office, Student Affairs Office, Logistics Office, and Personnel Office, providing convenient administrative services and public functions for all university faculty and students. It serves as the hub for the university's operations and management.\nMain Departments: President's Office, Party and Administration Office, Academic Affairs Office, Student Affairs Office, Graduate School, Personnel Office\nPublic Services: Service Hall, Service Counters, Conference Center\nSpecial Functions: Major University Meetings, Student Affairs Processing, Faculty Consultation Services\nOffice Hours: Monday to Friday 8:30-11:30, 14:00-17:00",
         "description": "名称：综合楼\n简述：学校行政和公共服务的重要中心，汇集了多个职能部门。楼内设有校长办公室、教务处、学生处、后勤处、人事处等重要部门，为全校师生提供便捷的行政服务和公共功能。是学校运行管理的枢纽。\n主要部门：校长办公室、党政办公室、教务处、学生工作处、研究生处、人事处\n公共服务：挂号大厅、办事窗口、会议中心\n特色功能：学校重大会议、学生事务办理、教师咨询服务\n办公时间：周一至周五 8:30-11:30 14:00-17:00"
       },
       "geometry": {
@@ -1415,6 +1424,7 @@
         "name": "6号教学楼",
         "name:en": "Teaching Building 6",
         "type": "multipolygon",
+        "description_en": "College (Primary Users): Engineering Mechanics, Applied Physics, Electronic Information, and other engineering disciplines\nFunction (Brief Description): Building No. 6 is an important experimental center for the university's engineering education, concentrating advanced teaching facilities for multiple engineering disciplines, fully demonstrating the comprehensive strength of the university's engineering education. The building houses well-equipped, professionally managed experimental platforms including a fluid mechanics laboratory, physics experiment center, and electronic/electrical engineering experiment center, all featuring complete facilities and advanced instrumentation. These laboratories provide high-quality support for students' experimental teaching and engineering practice training. Here, students can not only conduct various hands-on experiments but also engage with cutting-edge engineering technologies, developing solid practical engineering abilities and innovative thinking. It serves as a cradle for cultivating engineering professionals at the university.\nData: Approximately 7 floors, construction area of about 20,000 sqm, capacity for 2,600+ people.",
         "description": "学院（主要使用对象）：工程力学、应用物理、电子信息等工程类学科\n功能（简述）：6号教学楼是学校工程教育的重要实验中心，集中了多个工程类学科的先进教学设施，充分体现了学校工程教育的综合实力。该楼拥有设施完善、仪器先进的流体力学实验室、物理实验中心、电子电工实验中心等多个专业实验平台，这些实验室设备齐全、管理规范，为学生的实验教学和工程实践训练提供了优质的保障。在这里，学生不仅能够动手进行各类实验操作，还能够接触最前沿的工程技术，培养了扎实的工程实践能力和创新意识，是学校工程类专业人才培养的摇篮。\n数据：约7层，建筑面积约20000㎡，可容纳2600+人"
       },
       "geometry": {
@@ -2095,6 +2105,7 @@
         "name": "体育馆",
         "name:en": "District Stadium",
         "name:zh": "体育馆",
+        "description_en": "Name: Gymnasium\nFunction: The university's comprehensive sports venue, hosting various sports events and teaching activities\nData: Area approximately 8,000 sqm, capacity for 3,000+ people, equipped with basketball courts, volleyball courts, badminton courts and other facilities",
         "description": "名称：体育馆\n功能：学校综合性体育馆，承办各类体育赛事和教学活动\n数据：面积约8000㎡，可容纳3000+人，配备篮球场、排球场、羽毛球场等设施"
       },
       "geometry": {
@@ -2251,6 +2262,7 @@
         "name": "游泳馆",
         "name:en": "Swimming pool",
         "name:zh": "游泳馆",
+        "description_en": "Name: Natatorium\nFunction: The university's official swimming facility, providing instructional training and exercise\nData: Area approximately 5,000 sqm, includes one standard 50-meter pool and one shallow pool, capacity for 1,500+ people",
         "description": "名称：游泳馆\n功能：学校官方游泳馆，提供教学训练和锻炼\n数据：面积约5000㎡，标准50米池1个、浅水池1个，可容纳1500+人"
       },
       "geometry": {
@@ -2303,6 +2315,7 @@
         "name": "健美操馆",
         "name:en": "Aerobics Hall",
         "name:zh": "健美操馆",
+        "description_en": "Name: Aerobics Gymnasium\nFunction: The university's aerobics and yoga training center\nData: Area approximately 3,000 sqm, equipped with professional training venues and equipment, capacity for 800+ people",
         "description": "名称：健美操馆\n功能：学校健美操和瑜伽训练中心\n数据：面积约3000㎡，配备专业训练场地和设备，可容纳800+人"
       },
       "geometry": {
@@ -2348,6 +2361,7 @@
         "name:en": "Badminton court",
         "name:zh": "羽毛球馆",
         "sport": "badminton",
+        "description_en": "Name: Badminton Hall\nFunction: The university's badminton training and competition venue\nData: Area approximately 2,500 sqm, 6 international standard courts, capacity for 600+ people",
         "description": "名称：羽毛球馆\n功能：学校羽毛球训练和比赛场地\n数据：面积约2500㎡，6片国际标准球场，可容纳600+人"
       },
       "geometry": {
@@ -2397,6 +2411,7 @@
         "name:en": "Pingpong Hall",
         "name:zh": "乒乓球馆",
         "sport": "table_tennis",
+        "description_en": "Name: Table Tennis Hall\nFunction: The university's table tennis sports venue\nData: Area approximately 2,000 sqm, 15 international standard tables, capacity for 500+ people",
         "description": "名称：乒乓球馆\n功能：学校乒乓球运动场地\n数据：面积约2000㎡，15张国际标准球台，可容纳500+人"
       },
       "geometry": {
@@ -2446,6 +2461,7 @@
         "@id": "way/207596107",
         "landuse": "construction",
         "name": "大学生创新创业教育中心",
+        "description_en": "Name: College Students' Innovation and Entrepreneurship Education Center\nBrief Description: The core platform for cultivating innovative and entrepreneurial talents at the university, providing comprehensive support for students' innovation and entrepreneurship endeavors. The center integrates innovation education, startup incubation, and financing services, featuring functional areas such as creative workshops, project incubation rooms, and roadshow centers. It carries the university's mission to cultivate high-quality talents who can adapt to social development and possess an innovative spirit.\nFunctional Areas: Creative Exchange Zone, Project Incubation Room, Financing Matching Room, Roadshow Exhibition Hall, Multi-functional Classrooms\nServices: Entrepreneurship Guidance, Project Evaluation, Financing Matching, Enterprise Cooperation, Investment and Financing Lectures\nResident Projects: Gathers various innovation and entrepreneurship projects from across the university, creating a creative ecosystem for the Internet+ era",
         "description": "名称：大学生创新创业教育中心\n简述：学校创新创业人才培养的核心平台，为学生提供全方位的创新创业支持。中心集创新教育、创业孵化、融资服务于一体，拥有创意工坊、项目孵化室、路演中心等功能区域。这里承载了学校培养适应社会发展、具有创新精神的高素质人才的使命。\n功能区域：创意交流区、项目孵化室、融资对接室、路演展示厅、多功能教室\n服务内容：创业指导、项目评审、融资对接、企业合作、投融资讲座\n入驻项目：汇集全校各类创新创业项目，创造互联网+时代的创意生态"
       },
       "geometry": {
@@ -2608,6 +2624,7 @@
         "name:en": "Canteen No. 5",
         "name:zh": "五食堂",
         "amenity": "restaurant",
+        "description_en": "Name: Canteen 5\nOriginally a mixed faculty and student canteen, now closed. It was never particularly glorious, and the dishes were relatively expensive.",
         "description": "名称：五食堂\n 原师生混合食堂，现已倒闭，也没有辉煌过，菜品较贵。"
       },
       "geometry": {
@@ -2700,6 +2717,7 @@
         "name:en": "Wind tunnel laboratory",
         "name:zh": "风洞实验室",
         "office": "research",
+        "description_en": "Name: Wind Tunnel Laboratory\nBrief Description: An important base for the university's aerodynamic research, equipped with various specifications of wind tunnel facilities. The laboratory is outfitted with advanced equipment including low-speed and high-speed wind tunnels, used for research and testing in fields such as vehicle and building aerodynamics. It provides scientific support for the design and optimization of large-scale engineering projects like trains, high-speed rail, and bridges.\nWind Tunnel Types: Low-speed wind tunnel (0-50m/s), High-speed wind tunnel (0-200m/s)\nResearch Areas: Train aerodynamics, Vehicle body optimization design, Rail transit aerodynamic braking\nTesting Capabilities: Model aerodynamic force measurement, Flow field visualization, Aerodynamic noise testing\nEngineering Applications: Supports projects like China's high-speed rail and maglev systems",
         "description": "名称：风洞实验室\n简述：学校空气动力学研究的重要基地，拥有多种规格的风洞设施。实验室配备了低速风洞、高速风洞等先进设备，用于交通工具、建筑空气动力学等领域的研究和测试。为列车、高铁、桥梁等大型工程的设计和优化提供科学支撑。\n风洞类型：低速风洞（0-50m/s）、高速风洞（0-200m/s）\n研究领域：列车空气动力学、车体优化设计、轨道交通空气制动\n测试能力：模型气动力测量、流场可视化、气动噪声测试\n工程应用：支撑中国高铁、磁悬浮等项目"
       },
       "geometry": {
@@ -2740,6 +2758,7 @@
         "name:en": "Environmental Science and Engineering Experimental Teaching Center",
         "name:zh": "环境科学与工程实验教学中心",
         "office": "research",
+        "description_en": "Name: Environmental Science and Engineering Experimental Teaching Center\nBrief Description: An important base for cultivating ecological and environmental protection talents at the university. The center features a complete experimental system for environmental monitoring, treatment, and assessment, equipped with advanced analytical and testing instruments. It is dedicated to training engineering and technical talents with environmental awareness and practical abilities to meet the needs of economic and social development.\nMain Laboratories: Water Quality Analysis Laboratory, Atmospheric Monitoring Laboratory, Solid Waste Treatment Laboratory, Environmental Impact Assessment Laboratory\nFeatured Equipment: High Performance Liquid Chromatograph, Gas Chromatograph, Atomic Absorption Spectrophotometer\nResearch Directions: Sewage Treatment, Air Pollution Control, Environmental Assessment, Ecological Restoration\nStudent Training: Environmental Engineering, Environmental Science, Ecology and other related majors",
         "description": "名称：环境科学与工程实验教学中心\n简述：学校生态环保人才培养的重要基地。中心拥有完整的环境监测、治理与评估实验系统，配备了先进的分析检测仪器。致力于培养适应经济社会发展需要、具有环保意识和实践能力的工程技术人才。\n主要实验室：水质分析实验室、大气监测实验室、固体废弃物处理实验室、环境影响评价实验室\n特色设备：高效液相色谱仪、气相色谱仪、原子吸收分光光度计\n研究方向：污水处理、大气治理、环境评价、生态修复\n学生培养：环境工程、环境科学、生态学等专业"
       },
       "geometry": {
@@ -3038,6 +3057,7 @@
         "name": "四食堂（馨园）",
         "name:en": "Canteen No. 4",
         "name:zh": "四食堂（馨园）",
+        "description_en": "Name: Canteen 4 (Xinyuan)\nCuisine: Cold Dish Counter, Weight-loss Meal Counter, Spicy Hot Pot, Various Affordable Noodles, Assorted Home-style Dishes\nAverage Price: 6-15 RMB\nCrowd Density: Very High\nReputation: The first floor is economical and affordable, the second floor has relatively higher prices with private rooms. It is the most popular canteen, offering the cheapest prices, diverse food options, and a comfortable environment.",
         "description": "名称：四食堂（馨园）\n美食：凉拌菜窗口、减脂餐窗口、麻辣烫、各类便宜小面、各式家常菜\n均价：6-15元\n用餐密集程度：很高\n风评：一楼经济实惠、二楼消费相对较高有包间，是最受欢迎的食堂，价格最便宜，菜品丰富，环境舒适"
       },
       "geometry": {
@@ -3078,6 +3098,7 @@
         "name:en": "Civil Engineering Experimental Teaching Center",
         "name:zh": "土木工程实验教学中心",
         "office": "research",
+        "description_en": "Name: Civil Engineering Experimental Teaching Center\nBrief Description: The most important experimental teaching platform for the university's civil engineering program, featuring first-class experimental conditions in China. The center includes multiple specialized laboratories such as structural laboratory, materials laboratory, foundation engineering laboratory, and surveying laboratory, equipped with large-scale testing equipment and precision apparatus. Here, students conduct professional experiments including concrete strength tests, steel structure welding, and foundation settlement studies, developing solid engineering practical abilities.\nMain Laboratories: Structural Laboratory, Building Materials Laboratory, Geotechnical Engineering Laboratory, Foundation Engineering Laboratory, Engineering Surveying Laboratory\nFeatured Equipment: Universal Testing Machine, Concrete Batching Plant, Large-scale Shaking Table\nTarget Users: Students and graduate students in Civil Engineering, Architecture and related majors",
         "description": "名称：土木工程实验教学中心\n简述：学校土木工程专业最重要的实验教学平台，拥有国内一流的实验条件。中心拥有结构实验室、材料实验室、基础工程实验室、测量实验室等多个专业实验室，配备了大型试验设备和精密仪器。学生在这里进行混凝土强度试验、钢结构焊接、地基沉降等专业实验，培养扎实的工程实践能力。\n主要实验室：结构实验室、建筑材料实验室、岩土工程实验室、基础工程实验室、工程测量实验室\n特色设备：万能试验机、混凝土搅拌站、大型振动台\n服务对象：土木工程、建筑学等相关专业学生和研究生"
       },
       "geometry": {
@@ -3116,6 +3137,7 @@
         "lanes": "8",
         "leisure": "track",
         "name": "北区体育场",
+        "description_en": "Name: North District Sports Field\nFunction: The university's main track and field venue, hosting sports meets and athletic training\nData: Standard 400-meter 8-lane track, central football field, capacity for 5,000+ people",
         "description": "名称：北区体育场\n功能：学校田径运动主场，承办运动会和田径训练\n数据：标准400米八车道跑道，中心足球场，可容纳5000+人"
       },
       "geometry": {
@@ -3350,6 +3372,7 @@
         "building": "university",
         "name": "工程训练中心 B座",
         "name:en": "Engineering Training Center Block B",
+        "description_en": "Name: Engineering Training Center Building B\nBrief Description: A complementary engineering training facility to Building A, focusing on modern practical teaching such as electrical engineering, electronics, and electrical control. Building B contains comprehensive electrical training facilities including complete electrical engineering laboratories, electronic technology laboratories, microcontroller training rooms, and PLC laboratories. It provides students from the School of Electrical Engineering, School of Information Science, and related disciplines with solid hands-on operation and innovative design platforms.\nMain Training Projects: Fundamentals of Electrical Engineering, Electronic Technology, Electrical Control, Microcontroller Applications, Programmable Logic Controllers (PLC)\nFeatures: Integration of theory and practice, project-driven learning, innovation capability cultivation\nTarget Students: Electrical Engineering, Information Science, Automation and related majors",
         "description": "名称：工程训练中心 B座\n简述：与A座配套的工程实训场地，重点承担电工电子、电气控制等现代化实践教学。B座拥有完整的电工实验室、电子工艺实验室、单片机实训室、PLC实验室等电类实训设施。为电气学院、信息学院等相关学科学生提供扎实的动手操作和创新设计平台。\n主要实训项目：电工基础、电子工艺、电气控制、单片机应用、可编程控制器(PLC)\n特色：理论与实践结合、项目驱动学习、创新能力培养\n覆盖学生：电气、信息、自动化等专业"
       },
       "geometry": {
@@ -3423,6 +3446,7 @@
         "@id": "way/532472147",
         "building": "university",
         "name": "电气馆",
+        "description_en": "Name: Electrical Engineering Building\nBrief Description: The main office and teaching venue for the School of Electrical Engineering, serving as the academic center for the electrical engineering field at the university. The building houses advanced electrical equipment, power system laboratories, high-voltage laboratories, and other specialized facilities. It brings together excellent faculty in the electrical field, dedicated to cultivating high-quality engineering and technical talents to meet the development needs of the power industry.\nMain Functions: School administration, teaching, scientific research, experimentation\nDisciplinary Directions: Electrical Engineering and Automation, Power System and Automation, High Voltage and Insulation Technology\nResearch Directions: Rail transit traction drive, Smart grid, New energy power generation\nFeatures: Integration of industry, academia, and research; deep industry cooperation",
         "description": "名称：电气馆\n简述：电气学院的主要办公和教学场所，是学校电气工程领域的学术中心。馆内拥有先进的电气设备、电力系统实验室、高压实验室等专业设施。汇聚了电气领域的优秀师资，致力于培养适应电力行业发展需要的高素质工程技术人才。\n主要功能：学院办公、教学、科研、实验\n学科方向：电气工程及其自动化、电力系统及其自动化、高电压与绝缘技术\n科研方向：轨道交通牵引传动、智能电网、新能源发电\n特色：产学研结合、行业深度合作"
       },
       "geometry": {
@@ -3469,6 +3493,7 @@
         "building": "university",
         "name": "交通运输与磁悬浮实验室",
         "name:en": "Transportation and Magnetic Suspension Laboratory",
+        "description_en": "Name: Transportation and Maglev Laboratory\nBrief Description: An important scientific research base for the university's studies in rail transportation and new transportation modes. The laboratory focuses on research of advanced transportation methods such as maglev trains and high-speed trains, equipped with internationally advanced experimental devices and testing equipment. It brings together top scientific research talents in the transportation field to conduct cutting-edge scientific research.\nResearch Directions: Maglev train dynamics, Traction drive systems, High-speed train motion control\nMain Equipment: Maglev model test benches, Dynamic testing systems, Simulation analysis platforms\nResearch Achievements: Multiple national-level vertical projects, International cooperation projects\nSocial Contribution: Supports the development of China's maglev transportation industry",
         "description": "名称：交通运输与磁悬浮实验室\n简述：学校在轨道交通和新型交通方式研究中的重要科研基地。实验室专注于磁悬浮列车、高速列车等先进交通方式的研究，拥有国际先进的实验设备和测试装置。这里汇聚了交通运输领域的顶尖科研人才，开展前沿科学研究。\n研究方向：磁悬浮列车动力学、牵引传动系统、高速列车运动控制\n主要设备：磁悬浮模型试验台、动力学测试系统、仿真分析平台\n科研成果：多项国家级纵向课题、国际合作项目\n社会贡献：支撑中国磁悬浮交通事业发展"
       },
       "geometry": {
@@ -3507,6 +3532,7 @@
         "building": "university",
         "name": "工程训练中心 A座",
         "name:en": "Engineering Training Center Block A",
+        "description_en": "Name: Engineering Training Center Building A\nBrief Description: The university's most important practical teaching base, providing systematic hands-on training for engineering students across the campus. The center features advanced professional facilities including CNC machining centers, welding laboratories, fitting training workshops, and foundry workshops, with a total construction area exceeding 6,000 sqm. Here, students learn the integration of traditional crafts and modern technologies, developing practical abilities and innovative awareness.\nMain Training Projects: Turning, Milling, Fitting, Welding, CNC Programming, 3D Printing\nFeatures: Industry-academia integration, Learning by doing, Small-class teaching\nAnnual Training Capacity: 3,000+ people",
         "description": "名称：工程训练中心 A座\n简述：学校最重要的实践教学基地，为全校工程类学生提供系统的实操训练。中心拥有先进的数控加工中心、焊接实验室、钳工实训室、铸造车间等专业设施，总建筑面积超过6000㎡。学生在这里学习传统工艺与现代技术相结合，培养实践能力和创新意识。\n主要实训项目：车削加工、铣削加工、钳工、焊接、数控编程、3D打印\n特色：产学结合、做中学、小班教学\n年培训人数：3000+人"
       },
       "geometry": {
@@ -3553,6 +3579,7 @@
         "leisure": "park",
         "name": "机车博物院",
         "tourism": "museum",
+        "description_en": "Name: Locomotive Museum\nBrief Description: An important window displaying the history of China's railway development, serving as a distinctive cultural education base of the university. The museum collects precious artifacts including multiple generations of railway locomotives and passenger cars, featuring typical models from different eras such as steam locomotives, diesel locomotives, and electric locomotives. Through physical exhibits and data comparisons, it vividly showcases the technological progress and modernization achievements of China's railways over the past century.\nExhibition Features: Precious locomotive artifacts, Railway development history, Transportation technology innovation\nVisiting Value: Understanding railway history, Experiencing industrial heritage, Stimulating interest in technology\nOpening Status: Open to all university faculty, students and the public (please inquire for opening hours)",
         "description": "名称：机车博物院\n简述：展示中国铁路发展历史的重要窗口，是学校特色文化教育基地。博物院收藏了多代铁路机车、客车等珍贵文物，包括蒸汽机车、内燃机车、电力机车等不同时代的典型车型。通过实物展示和数据对比，生动展现了百年来中国铁路技术进步和现代化建设成就。\n展品特色：珍贵机车文物、铁路发展历史、交通科技创新\n参观价值：了解铁路历史、感受工业遗产、激发科技兴趣\n开放情况：向全校师生和社会开放（咨询开放时间）"
       },
       "geometry": {
@@ -3634,6 +3661,7 @@
         "@id": "way/533720230",
         "building": "hospital",
         "name": "西南交通大学校医院",
+        "description_en": "Name: Southwest Jiaotong University Hospital\nBrief Description: An important institution for safeguarding the health of university faculty and students, equipped with multiple clinical departments including Internal Medicine, Surgery, Gynecology, and Stomatology. The hospital features modern medical equipment and an experienced medical team, providing 24-hour medical and health services to over 16,000 faculty members and students.\nMain Departments: Internal Medicine, Surgery, Gynecology & Obstetrics, Stomatology, Ophthalmology, ENT, Emergency Department\nSpecial Services: Physical Examination Center, Vaccination, Mental Health Counseling\nEmergency Hotline: Internal line 6666",
         "description": "名称：西南交通大学校医院\n简述：学校师生健康保障的重要机构，设有内科、外科、妇科、口腔科等多个临床科室。医院拥有现代化的医疗设备，配备了经验丰富的医疗团队，为全校1.6万余名师生提供24小时的医疗卫生服务。\n主要科室：内科、外科、妇产科、口腔科、眼科、耳鼻喉科、急诊科\n特色服务：体检中心、预防接种、心理健康咨询\n急救电话：内线6666"
       },
       "geometry": {
@@ -4351,6 +4379,7 @@
         "layer": "1",
         "name": "西南交通大学犀浦校区图书馆",
         "name:zh": "图书馆",
+        "description_en": "Name: Southwest Jiaotong University Xipu Campus Library\nBrief Description: The university's most important literature and information center, featuring a grand building with rich collections. It holds over 2 million physical books and more than 100 electronic resource databases, providing professional information services for all faculty and students. The library contains various functional areas including self-study zones, discussion rooms, and multimedia learning centers, serving as an important base for students' independent learning and academic research.\nOpening Hours: Monday to Sunday 8:00-22:00\nSpecial Services: Interlibrary loan, Subject consultation, Thesis duplication checking, Book recommendations",
         "description": "名称：西南交通大学犀浦校区图书馆\n简述：学校最重要的文献信息中心，馆舍宏大、藏书丰富。拥有纸质图书200万余册，电子资源数据库100余个，为全校师生提供专业的信息服务。馆内设有自习区、研讨室、多媒体学习中心等多种功能区域，是学生自主学习和学术研究的重要阵地。\n开放时间：周一至周日 8:00-22:00\n特色服务：馆际互借、学科咨询、论文查重、图书推荐"
       },
       "geometry": {
@@ -4599,6 +4628,7 @@
         "name:en": "Teaching Building 8",
         "name:zh": "8号教学楼",
         "short_name": "八教",
+        "description_en": "College (Primary Users): School of Architecture, School of Art and Communication\nFunction (Brief Description): Building No. 8 is an important teaching base for the university's distinctive disciplines, carrying the teaching tasks for creative subjects such as architecture and art design. The building features novel architectural design and advanced concepts, with interior spaces including spacious professional studios, fully functional design laboratories, art exhibition halls, and other specialized teaching areas, providing an ideal environment for students' creative design and artistic creation. It brings together excellent faculty in architecture and arts, cultivating numerous creative talents with innovative spirit and international competitiveness. The building fully embodies the characteristics and advantages of creative education, serving as an important support for the university's innovative talent cultivation and disciplinary development, while also playing a significant aesthetic leadership role in campus culture construction.\nData: Approximately 6 floors, construction area of about 18,000 sqm, capacity for 2,000+ people",
         "description": "学院（主要使用对象）：建筑学院、艺术与传播学院\n功能（简述）：8号教学楼是学校特色学科的重要教学基地，承载着建筑学和艺术设计等创意学科的教学任务。该楼建筑设计新颖、理念先进，内部设有宽敞的专业工作室、功能完善的设计实验室、艺术展览厅等特色教学空间，为学生的创意设计和艺术创作提供了理想的环境。这里汇聚了优秀的建筑和艺术师资，培养了众多具有创新精神和国际竞争力的创意人才。该楼充分体现了创意教育的特点和优势，是学校创新人才培养和学科建设的重要依托，在校园文化建设中也发挥了重要的审美引领作用。\n数据：约6层，建筑面积约18000㎡，可容纳2000+人"
       },
       "geometry": {
@@ -4832,6 +4862,7 @@
         "@id": "way/1098786995",
         "leisure": "stadium",
         "name": "南区体育场",
+        "description_en": "Name: South District Sports Field\nFunction: Comprehensive sports venue in the university's south district\nData: Area approximately 15,000 sqm, multi-functional sports field, capacity for 3,000+ people",
         "description": "名称：南区体育场\n功能：学校南区综合运动场地\n数据：面积约15000㎡，多功能运动场，可容纳3000+人"
       },
       "geometry": {
@@ -4934,6 +4965,7 @@
         "leisure": "pitch",
         "sport": "badminton",
         "name": "羽毛球场1",
+        "description_en": "Name: Badminton Court 1\nFunction: Outdoor badminton court\nData: 4 standard courts, capacity for 300+ people",
         "description": "名称：羽毛球场1\n功能：露天羽毛球场地\n数据：4片标准场地，可容纳300+人"
       },
       "geometry": {
@@ -4972,6 +5004,7 @@
         "leisure": "pitch",
         "sport": "badminton",
         "name": "羽毛球场2",
+        "description_en": "Name: Badminton Court 2\nFunction: Outdoor badminton court\nData: 4 standard courts, capacity for 300+ people",
         "description": "名称：羽毛球场2\n功能：露天羽毛球场地\n数据：4片标准场地，可容纳300+人"
       },
       "geometry": {
@@ -5010,6 +5043,7 @@
         "leisure": "pitch",
         "sport": "badminton",
         "name": "羽毛球场3",
+        "description_en": "Name: Badminton Court 3\nFunction: Outdoor badminton court\nData: 4 standard courts, capacity for 300+ people",
         "description": "名称：羽毛球场3\n功能：露天羽毛球场地\n数据：4片标准场地，可容纳300+人"
       },
       "geometry": {
@@ -5048,6 +5082,7 @@
         "leisure": "pitch",
         "sport": "badminton",
         "name": "羽毛球场4",
+        "description_en": "Name: Badminton Court 4\nFunction: Outdoor badminton court\nData: 4 standard courts, capacity for 300+ people",
         "description": "名称：羽毛球场4\n功能：露天羽毛球场地\n数据：4片标准场地，可容纳300+人"
       },
       "geometry": {
@@ -5086,6 +5121,7 @@
         "leisure": "stadium",
         "name": "北区排球场",
         "sport": "volleyball",
+        "description_en": "Name: North District Volleyball Court\nFunction: The university's volleyball sports venue\nData: 6 international standard courts, capacity for 800+ people",
         "description": "名称：北区排球场\n功能：学校排球运动场地\n数据：6片国际标准球场，可容纳800+人"
       },
       "geometry": {
@@ -5132,6 +5168,7 @@
         "leisure": "stadium",
         "name": "北区篮球场",
         "sport": "basketball",
+        "description_en": "Name: North District Basketball Court\nFunction: The university's basketball sports venue\nData: 8 international standard courts, capacity for 1,000+ people",
         "description": "名称：北区篮球场\n功能：学校篮球运动场地\n数据：8片国际标准球场，可容纳1000+人"
       },
       "geometry": {
@@ -5203,6 +5240,7 @@
         "building": "yes",
         "name": "二食堂（梁园）",
         "name:en": "Canteen No.2",
+        "description_en": "Name: Canteen 2 (Liangyuan)\nCuisine: Grilled Meat Rice, Clay Pot Rice Noodles, Set Meals\nAverage Price: 7-11 RMB\nCrowd Density: Medium\nReputation: High cost-performance ratio, affordable dishes, homely flavors with diverse options. The second floor features various specialty counters like grilled meat rice and clay pot rice noodles",
         "description": "名称：二食堂（梁园）\n美食：烤肉饭、砂锅米线、套餐饭\n均价：7-11元\n用餐密集程度：中等\n风评：性价比高，菜品实惠，口味家常菜品选择丰富，二楼有如烤肉饭、砂锅米线等多样风味窗口，被称为“南区同学的天堂"
       },
       "geometry": {
@@ -5385,6 +5423,7 @@
         "building": "yes",
         "name": "三食堂（粟园）",
         "name:en": "Cafeteria No.3",
+        "description_en": "Name: Canteen 3 (Suyuan)\nCuisine: Halal Lamb Soup, Beef Noodles, Spicy Hand-shredded Chicken, Halal Dishes\nAverage Price: 8-13 RMB\nCrowd Density: Medium\nReputation: After a comprehensive upgrade, it features a modern environment. The second floor is suitable for group dining, even offering dishes like crayfish",
         "description": "名称：三食堂（粟园）\n美食：清真羊肉汤、牛肉面、香辣手撕鸡、清真菜\n均价：8-13元\n用餐密集程度：中等\n风评：经历全面升级，环境现代化，二楼是适合聚餐的餐厅，甚至有小龙虾等菜式，楼下有“地下美食城”"
       },
       "geometry": {
@@ -5598,6 +5637,7 @@
         "building": "yes",
         "name": "一食堂（黍园）",
         "name:en": "Canteen No.1",
+        "description_en": "Name: Canteen 1 (Shuyuan)\nCuisine: Spicy Hot Pot, Boiled Fish, Kung Pao Chicken, Sichuan Cuisine, Vegetarian Dishes, Halal Food\nAverage Price: 8-12 RMB\nCrowd Density: High\nReputation: The first floor offers homestyle set meals and stir-fries, the second floor is a halal restaurant famous for its beef noodles and mao cai (spicy mixed pot), known as the king of cost-performance ratio with authentic flavors.",
         "description": "名称：一食堂（黍园）\n美食：麻辣烫、水煮鱼、宫保鸡丁、川菜、素菜、清真菜\n均价：8-12元\n用餐密集程度：高\n风评：一楼为家常套餐小炒，二楼是清真餐厅，牛肉拉面和冒菜很有名，性价比之王、口味地道"
       },
       "geometry": {
@@ -5795,6 +5835,7 @@
         "@id": "way/1098806599",
         "landuse": "retail",
         "name": "北区商业街",
+        "description_en": "Name: North District Commercial Street\nBrief Description: An important commercial center for student life in the university's north district, gathering various life service facilities including dining, supermarkets, barbershops, and express delivery. It provides convenient shopping, dining, and daily services for over 1,000 students in the north district, serving as an important showcase window for campus commercial culture.\nMain Business Types: Convenience stores, Restaurants, Barbershops, Laundromats, Electronics stores, Express delivery stations\nFeatured Shops: Specialty noodle restaurants, Barbecue stalls, Bubble tea shops, Bento shops\nService Hours: Most stores open from 7:00-22:00\nStudent Reviews: Attentive service, Affordable prices, Comprehensive variety",
         "description": "名称：北区商业街\n简述：学校北区学生生活的重要商业中心，汇聚了餐饮、超市、理发、快递等各类生活服务设施。为北区1000多名学生提供便捷的购物、就餐、生活服务。是校园商业文化的重要展示窗口。\n主要商户类型：便利超市、餐饮店铺、理发店、洗衣店、电子产品店、快递驿站\n特色店铺：特色面馆、烧烤坊、奶茶店、便当店\n服务时间：大部分店铺 7:00-22:00 营业\n学生评价：服务周到、价格实惠、品种齐全"
       },
       "geometry": {
@@ -5832,6 +5873,7 @@
         "@id": "way/1098808299",
         "leisure": "stadium",
         "name": "南区网球场",
+        "description_en": "Name: South District Tennis Court\nFunction: The university's tennis sports venue\nData: 4 international standard courts, capacity for 500+ people",
         "description": "名称：南区网球场\n功能：学校网球运动场地\n数据：4片国际标准球场，可容纳500+人"
       },
       "geometry": {
@@ -5869,6 +5911,7 @@
         "@id": "way/1098808301",
         "leisure": "stadium",
         "name": "南区羽毛球场",
+        "description_en": "Name: South District Badminton Court\nFunction: Badminton court in the university's south district\nData: 6 standard courts, capacity for 600+ people",
         "description": "名称：南区羽毛球场\n功能：学校南区羽毛球场地\n数据：6片标准球场，可容纳600+人"
       },
       "geometry": {
@@ -6721,6 +6764,7 @@
         "landuse": "residential",
         "residential": "apartments",
         "name": "北区宿舍(在装修)",
+        "description_en": "Construction is being carried out even while students are residing here, which is really unreasonable.",
         "description": "有学生住还搞装修依托构式"
       },
       "geometry": {
