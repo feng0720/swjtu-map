@@ -395,11 +395,11 @@ const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, se
       return buildings;
     },
     getGeoData: () => geoData,
-    drawRoute: (coordinates) => {
+    drawRoute: (coordinates, color = '#3b82f6') => {
       const map = mapContainerRef.current;
       if (map) {
         const polyline = L.polyline(coordinates, {
-          color: '#3b82f6',
+          color: color,
           weight: 4,
           opacity: 0.8,
           lineCap: 'round',

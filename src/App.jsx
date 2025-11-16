@@ -58,6 +58,7 @@ function Main() {
         isOpen={showBikeRoutes}
         onClose={() => setShowBikeRoutes(false)}
         mapRef={mapRef}
+        geoData={geoData}
         language={language}
       />
     </div>
