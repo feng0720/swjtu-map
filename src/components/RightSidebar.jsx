@@ -4,7 +4,7 @@ import BuildingInfo from './BuildingInfo';
 import SearchBuildings from './SearchBuildings';
 import RouteNavigation from './RouteNavigation';
 
-export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData,activeTab,setActiveTab,start,end }) {
+export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData, activeTab, setActiveTab, start, end, language }) {
   
 
   return (
@@ -20,7 +20,7 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
           }`}
         >
           <MapPin className="w-5 h-5" />
-          <span className="hidden sm:inline">导航</span>
+          <span className="hidden sm:inline">{language === 'en' ? 'Navigation' : '导航'}</span>
         </button>
         <button
           onClick={() => setActiveTab('route')}
@@ -31,7 +31,7 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
           }`}
         >
           <Route className="w-5 h-5" />
-          <span className="hidden sm:inline">路线规划</span>
+          <span className="hidden sm:inline">{language === 'en' ? 'Route' : '路线规划'}</span>
         </button>
         <button
           onClick={() => setActiveTab('search')}
@@ -42,7 +42,7 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
           }`}
         >
           <Search className="w-5 h-5" />
-          <span className="hidden sm:inline">搜索</span>
+          <span className="hidden sm:inline">{language === 'en' ? 'Search' : '搜索'}</span>
         </button>
       </div>
 
@@ -51,10 +51,10 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
         {activeTab === 'navigation' && (
           <div>
             {selectedBuilding ? (
-              <BuildingInfo building={selectedBuilding} />
+              <BuildingInfo building={selectedBuilding} language={language} />
             ) : (
               <div className="text-gray-500 dark:text-gray-400 text-center py-8">
-                点击地图中的建筑查看详情
+                {language === 'en' ? 'Click a building on the map to view details' : '点击地图中的建筑查看详情'}
               </div>
             )}
           </div>
@@ -67,12 +67,13 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
             geoData={geoData}
             start={start}
             end={end}
+            language={language}
           />
         )}
 
         {activeTab === 'route' && !geoData && (
           <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-            加载中...
+            {language === 'en' ? 'Loading...' : '加载中...'}
           </div>
         )}
 
@@ -81,10 +82,9 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
             key="search-buildings"
             mapRef={mapRef}
             geoData={geoData}
+            language={language}
             onBuildingSelect={(buildingInfo) => {
-              // 搜索到建筑后，传递完整的建筑信息
               onSelectBuilding?.(buildingInfo);
-              // 切换到导航标签页显示详情
               setActiveTab('navigation');
             }}
           />
@@ -92,7 +92,7 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
 
         {activeTab === 'search' && !geoData && (
           <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-            加载中...
+            {language === 'en' ? 'Loading...' : '加载中...'}
           </div>
         )}
       </div>

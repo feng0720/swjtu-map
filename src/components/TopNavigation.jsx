@@ -9,7 +9,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
         <div className="flex items-center gap-3">
           <div className="text-2xl font-bold">🗺️</div>
           <div>
-            <h1 className="text-lg font-bold">西南交通大学</h1>
+            <h1 className="text-lg font-bold">{language === 'en' ? 'Southwest Jiaotong University' : '西南交通大学'}</h1>
             <p className="text-xs opacity-90">Xipu Campus</p>
           </div>
         </div>
@@ -20,7 +20,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           <button
             onClick={onThemeToggle}
             className="p-2 rounded-lg transition-colors"
-            title={theme === 'light' ? '切换到暗色' : '切换到亮色'}
+            title={theme === 'light' ? (language === 'en' ? 'Switch to dark' : '切换到暗色') : (language === 'en' ? 'Switch to light' : '切换到亮色')}
           >
             {theme === 'light' ? (
               <Moon className="w-5 h-5 hover:text-sky-300 hover:scale-125 duration-300 transition-all" />
@@ -33,7 +33,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           <button
             onClick={onLanguageToggle}
             className="p-2 hover:scale-125 rounded-lg flex items-center gap-1 duration-300 transition-all"
-            title="切换语言"
+            title={language === 'en' ? '切换语言' : 'Switch Language'}
           >
             <Globe className="w-5 h-5" />
             <span className="text-sm font-medium">{language === 'zh' ? 'EN' : '中'}</span>
@@ -43,7 +43,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           <button
             onClick={on3DToggle}
             className="p-2 rounded-lg flex items-center gap-1 transition-all hover:scale-125 duration-300"
-            title={is3D ? '切换到2D' : '切换到3D'}
+            title={is3D ? (language === 'en' ? 'Switch to 2D' : '切换到2D') : (language === 'en' ? 'Switch to 3D' : '切换到3D')}
           >
             <Box className="w-5 h-5" />
             <span className="text-sm font-medium">{is3D ? '3D' : '2D'}</span>
