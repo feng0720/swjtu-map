@@ -1,11 +1,22 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import React, { useEffect, useState, useRef, useImperativeHandle, forwardRef } from 'react';
+import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-export default function CampusMap({onSelectBuilding}) {
+// 获取地图实例的子组件
+function MapEventsHandler({ mapContainerRef }) {
+  const map = useMap();
+  useEffect(() => {
+    mapContainerRef.current = map;
+  }, [map, mapContainerRef]);
+  return null;
+}
+
+const CampusMap = forwardRef(function CampusMap({onSelectBuilding, onBuildingsLoaded}, ref) {
   const [geoData, setGeoData] = useState(null);
   const geoJsonRef = useRef();
+  const mapContainerRef = useRef(null); // 存储地图实例
+  const buildingLayersRef = useRef(new Map()); // 存储建筑名称到图层的映射
 
   // 加载 GeoJSON
   useEffect(() => {
@@ -58,6 +69,13 @@ export default function CampusMap({onSelectBuilding}) {
       type: layer.feature?.properties?.building,
       raw: layer.feature?.properties
     };
+
+    // 存储图层引用
+    if (!buildingLayersRef.current.has(displayName)) {
+      buildingLayersRef.current.set(displayName, []);
+    }
+    buildingLayersRef.current.get(displayName).push(layer);
+
     layer.on('click',()=>{
       // 把值传递给父组件
       if(typeof onSelectBuilding === 'function'){
@@ -133,6 +151,88 @@ export default function CampusMap({onSelectBuilding}) {
     };
   };
 
+  // 暴露方法供父组件调用
+  useImperativeHandle(ref, () => ({
+    // 搜索建筑并高亮
+    highlightBuilding: (buildingName) => {
+      const layers = buildingLayersRef.current.get(buildingName);
+      if (layers) {
+        layers.forEach(layer => {
+          layer.setStyle({
+            weight: 4,
+            color: '#2563eb',
+            fillColor: '#2563eb',
+            fillOpacity: 0.6,
+          });
+        });
+        return true;
+      }
+      return false;
+    },
+    // 自定义颜色高亮建筑（用于路线规划）
+    highlightBuildingWithColor: (buildingName, color) => {
+      const layers = buildingLayersRef.current.get(buildingName);
+      if (layers) {
+        layers.forEach(layer => {
+          layer.setStyle({
+            weight: 4,
+            color: color,
+            fillColor: color,
+            fillOpacity: 0.6,
+          });
+        });
+        return true;
+      }
+      return false;
+    },
+    // 清除高亮
+    clearHighlight: (buildingName) => {
+      const layers = buildingLayersRef.current.get(buildingName);
+      if (layers) {
+        layers.forEach(layer => {
+          layer.setStyle({
+            weight: 1,
+            color: '#999',
+            fillColor: '#d4d4d8',
+            fillOpacity: 0.15,
+          });
+        });
+      }
+    },
+    // 获取所有建筑列表
+    getAllBuildings: () => {
+      return Array.from(buildingLayersRef.current.keys());
+    },
+    // 获取GeoJSON数据
+    getGeoData: () => {
+      return geoData;
+    },
+    // 绘制路线
+    drawRoute: (coordinates) => {
+      const map = mapContainerRef.current;
+      if (map) {
+        const polyline = L.polyline(coordinates, {
+          color: '#3b82f6',
+          weight: 4,
+          opacity: 0.8,
+          lineCap: 'round',
+          lineJoin: 'round'
+        }).addTo(map);
+
+        // 自动调整地图视图以显示整条路线
+        map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
+        return polyline;
+      }
+      return null;
+    },
+    // 移除路线
+    removeRoute: (routeLine) => {
+      if (routeLine && routeLine.remove) {
+        routeLine.remove();
+      }
+    }
+  }));
+
   return (
     // 重要：使用父容器的宽高（不要使用100vw/100vh）
     <div className="w-full h-full rounded-lg">
@@ -142,6 +242,7 @@ export default function CampusMap({onSelectBuilding}) {
         scrollWheelZoom={true}
         className='w-full h-full' // 使 MapContainer 填充父容器
       >
+        <MapEventsHandler mapContainerRef={mapContainerRef} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; OpenStreetMap contributors"
@@ -166,4 +267,8 @@ export default function CampusMap({onSelectBuilding}) {
       </MapContainer>
     </div>
   );
-}
+});
+
+CampusMap.displayName = 'CampusMap';
+
+export default CampusMap;

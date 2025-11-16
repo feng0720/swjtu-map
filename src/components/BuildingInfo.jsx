@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReservationModal from './ReservationModal';
 import ReservationHistory from './ReservationHistory';
+import { MapPin, Clock, Phone } from 'lucide-react';
 
 export default function BuildingInfo({ building }) {
   const [showReservation, setShowReservation] = useState(false);
@@ -8,8 +9,8 @@ export default function BuildingInfo({ building }) {
 
   if (!building) {
     return (
-      <div className="text-gray-500 dark:text-gray-400">
-        点击左侧地图中的建筑查看详情…
+      <div className="text-gray-500 dark:text-gray-400 text-center py-4">
+        点击建筑查看详情…
       </div>
     );
   }
@@ -20,57 +21,50 @@ export default function BuildingInfo({ building }) {
   const canReserve = isLibrary || isGym || isSchool;
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-2 text-blue-600 dark:text-blue-400">
-        {building.name}
-      </h2>
+    <div className="space-y-4">
+      {/* 建筑标题 */}
+      <div>
+        <h2 className="text-2xl font-bold mb-1 text-blue-600 dark:text-blue-400">
+          {building.name}
+        </h2>
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+          <MapPin className="w-4 h-4" />
+          <span>{building.type || '建筑'}</span>
+        </div>
+      </div>
 
+      {/* 建筑描述 */}
       {building.description && (
-        <p className="mb-4 text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed whitespace-pre-wrap">
           {building.description}
         </p>
       )}
-      
 
-      <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-        <p><b>建筑类型：</b> {building.type }</p>
-      </div>
-
+      {/* 预约按钮 */}
       {canReserve && (
-        <div className="mt-4">
-          <button
-            onClick={() => setShowReservation(true)}
-            className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
-          >
-            {isLibrary ? '预约图书馆' : isGym ? '预约体育馆' : '预约事务办理'}
-          </button>
-        </div>
+        <button
+          onClick={() => setShowReservation(true)}
+          className="w-full px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-semibold text-lg"
+        >
+          {isLibrary ? '预约图书馆' : isGym ? '预约体育馆' : '预约事务办理'}
+        </button>
       )}
 
-      <div className="mt-4">
-        <details className="cursor-pointer">
-          <summary className="text-gray-700 dark:text-gray-300">原始数据</summary>
-          <pre className="text-xs mt-2 p-2 bg-gray-100 dark:bg-gray-800 rounded">
-            {JSON.stringify(building.raw, null, 2)}
-          </pre>
-        </details>
-      </div>
+      {/* 预约记录按钮 */}
+      <button
+        onClick={() => setShowHistory(true)}
+        className="w-full px-4 py-2 bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors font-medium text-sm"
+      >
+        📋 预约记录
+      </button>
 
-      <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-600">
-        <button
-          onClick={() => setShowHistory(true)}
-          className="w-full px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-colors"
-        >
-          预约记录
-        </button>
-      </div>
-
+      {/* 模态框 */}
       <ReservationModal
         building={building}
         isOpen={showReservation}
         onClose={() => setShowReservation(false)}
       />
-      
+
       <ReservationHistory
         isOpen={showHistory}
         onClose={() => setShowHistory(false)}
