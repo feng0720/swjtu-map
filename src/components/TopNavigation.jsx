@@ -1,7 +1,7 @@
 import React from 'react';
-import { Sun, Moon, Globe, Box } from 'lucide-react';
+import { Sun, Moon, Globe, Bike } from 'lucide-react';
 
-export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, on3DToggle, is3D }) {
+export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, onBikeRouteClick }) {
   return (
     <div className="bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-600 dark:from-sky-950 dark:via-blue-950 dark:to-indigo-950 text-white shadow-lg">
       <div className="px-6 py-4 flex items-center justify-between">
@@ -39,14 +39,14 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
             <span className="text-sm font-medium">{language === 'zh' ? 'EN' : '中'}</span>
           </button>
 
-          {/* 3D/2D切换 */}
+          {/* 自行车路线规划 */}
           <button
-            onClick={on3DToggle}
+            onClick={onBikeRouteClick}
             className="p-2 rounded-lg flex items-center gap-1 transition-all hover:scale-125 duration-300"
-            title={is3D ? (language === 'en' ? 'Switch to 2D' : '切换到2D') : (language === 'en' ? 'Switch to 3D' : '切换到3D')}
+            title={language === 'en' ? 'Peak Hour Bike Routes' : '高峰期自行车路线'}
           >
-            <Box className="w-5 h-5" />
-            <span className="text-sm font-medium">{is3D ? '3D' : '2D'}</span>
+            <Bike className="w-5 h-5" />
+            <span className="text-sm font-medium">🚲</span>
           </button>
 
           {/* 分隔线 */}

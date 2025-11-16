@@ -5,19 +5,18 @@ import { ThemeProvider, useTheme } from './Theme';
 import CampusMap from './components/CampusMap';
 import TopNavigation from './components/TopNavigation';
 import RightSidebar from './components/RightSidebar';
-import { use } from 'react';
-import { log } from 'three';
+import BikeRoutePlanner from './components/BikeRoutePlanner';
 
 function Main() {
   const { theme, toggleTheme } = useTheme();
   const [selectBuilding, setSelectBuilding] = useState(null);
   const [language, setLanguage] = useState('zh'); // 'zh' or 'en'
-  const [is3D, setIs3D] = useState(false); // 3D mode toggle
   const mapRef = useRef(null); // 地图ref，用于搜索功能
   const [geoData, setGeoData] = useState(null);
   const [start,setStart] = useState(null);
   const [end,setEnd] = useState(null);
   const [activeTab, setActiveTab] = useState('navigation'); // 'navigation', 'route', 'search'
+  const [showBikeRoutes, setShowBikeRoutes] = useState(false);
 
   // 当mapRef加载完成后，获取geoData
   useEffect(() => {
@@ -40,8 +39,7 @@ function Main() {
         onThemeToggle={toggleTheme}
         language={language}
         onLanguageToggle={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
-        is3D={is3D}
-        on3DToggle={() => setIs3D(!is3D)}
+        onBikeRouteClick={() => setShowBikeRoutes(true)}
       />
 
       {/* 主要内容区域 */}
@@ -54,6 +52,14 @@ function Main() {
         {/* 右侧信息栏 */}
         <RightSidebar selectedBuilding={selectBuilding} onSelectBuilding={setSelectBuilding} mapRef={mapRef} geoData={geoData} activeTab={activeTab} setActiveTab={setActiveTab} start={start} end={end} language={language}/>
       </div>
+
+      {/* 自行车路线规划 */}
+      <BikeRoutePlanner
+        isOpen={showBikeRoutes}
+        onClose={() => setShowBikeRoutes(false)}
+        mapRef={mapRef}
+        language={language}
+      />
     </div>
   );
 }
