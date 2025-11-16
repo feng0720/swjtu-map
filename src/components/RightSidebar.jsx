@@ -4,7 +4,7 @@ import BuildingInfo from './BuildingInfo';
 import SearchBuildings from './SearchBuildings';
 import RouteNavigation from './RouteNavigation';
 
-export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData,activeTab,setActiveTab,start,end }) {
+export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData,activeTab,setActiveTab,start,end ,language}) {
   
 
   return (
@@ -51,7 +51,7 @@ export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRe
         {activeTab === 'navigation' && (
           <div>
             {selectedBuilding ? (
-              <BuildingInfo building={selectedBuilding} />
+              <BuildingInfo building={selectedBuilding} language={language}/>
             ) : (
               <div className="text-gray-500 dark:text-gray-400 text-center py-8">
                 点击地图中的建筑查看详情

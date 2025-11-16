@@ -45,7 +45,7 @@ const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, se
         const description = feature?.properties?.description;
         const description_en = feature?.properties?.description_en;
         const displayDescription = languageRef.current === 'zh' ? description || '' : description_en || '';
-        layer.setPopupContent(`<b>${buildingName}</b>${displayDescription ? `<br>${displayDescription}` : ''}`);
+        layer.setPopupContent(`<b>${buildingName}</b>`);
       });
     });
   }, [language]);
@@ -68,7 +68,7 @@ const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, se
     });
 
     // 绑定 popup （只绑定一次）
-    layer.bindPopup(`<b>${displayName}</b>${displayDescription ? `<br>${displayDescription}` : ''}`);
+    layer.bindPopup(`<b>${displayName}</b>`);
 
     // 鼠标事件
     layer.on('mouseover', (e) => {
@@ -97,6 +97,7 @@ const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, se
     const buildingInfo = {
       name: displayName,
       description: displayDescription,
+      description_en: description_en,
       type: feature?.properties?.building,
       raw: feature?.properties
     };

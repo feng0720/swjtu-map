@@ -52,7 +52,7 @@ function Main() {
         </div>
 
         {/* 右侧信息栏 */}
-        <RightSidebar selectedBuilding={selectBuilding} onSelectBuilding={setSelectBuilding} mapRef={mapRef} geoData={geoData} activeTab={activeTab} setActiveTab={setActiveTab} start={start} end={end}/>
+        <RightSidebar selectedBuilding={selectBuilding} onSelectBuilding={setSelectBuilding} mapRef={mapRef} geoData={geoData} activeTab={activeTab} setActiveTab={setActiveTab} start={start} end={end} language={language}/>
       </div>
     </div>
   );

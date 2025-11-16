@@ -3,7 +3,7 @@ import ReservationModal from './ReservationModal';
 import ReservationHistory from './ReservationHistory';
 import { MapPin, Clock, Phone } from 'lucide-react';
 
-export default function BuildingInfo({ building }) {
+export default function BuildingInfo({ building,language }) {
   const [showReservation, setShowReservation] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
 
@@ -36,7 +36,7 @@ export default function BuildingInfo({ building }) {
       {/* 建筑描述 */}
       {building.description && (
         <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed whitespace-pre-wrap">
-          {building.description}
+          {language==='zh'?building.description:building.description_en}
         </p>
       )}
 
