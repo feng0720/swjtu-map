@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, X, MapPin, ArrowRight } from 'lucide-react';
+import { X, MapPin, ArrowRight } from 'lucide-react';
 
-export default function RouteNavigation({ mapRef, geoData, start, end}) {
+export default function RouteNavigation({ mapRef, geoData, start, end, language = 'zh' }) {
   const [startBuilding, setStartBuilding] = useState(null);
   const [endBuilding, setEndBuilding] = useState(null);
   const [startQuery, setStartQuery] = useState('');
@@ -12,6 +12,23 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
   const [routeDistance, setRouteDistance] = useState(null);
   const [routeDuration, setRouteDuration] = useState(null);
   const routeLineRef = useRef(null);
+  const previousHighlightsRef = useRef({ start: null, end: null });
+  const buildingNameMapRef = useRef(new Map()); // 存储建筑中英文名称的映射
+
+  // 初始化建筑名称映射（中英文）
+  useEffect(() => {
+    if (geoData?.features) {
+      const nameMap = new Map();
+      geoData.features.forEach(feature => {
+        const nameZh = feature.properties?.name || feature.properties?.['name:zh'];
+        const nameEn = feature.properties?.['name:en'];
+        if (nameZh) {
+          nameMap.set(nameZh, nameEn || nameZh);
+        }
+      });
+      buildingNameMapRef.current = nameMap;
+    }
+  }, [geoData]);
 
   // 获取所有建筑列表
   useEffect(() => {
@@ -27,22 +44,26 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
     return () => clearTimeout(timer);
   }, [mapRef]);
 
-  // 初始化：如果用户没有输入，就用父组件传入的 start / end
+  // 同步从地图点击传入的 start/end
   useEffect(() => {
-  if (start) {
-    handleSelectStart(start);
-  }
-  }, [start]);   
+    if (start) {
+      setStartBuilding(start);
+      setStartQuery(start);
+      setStartResults([]);
+      console.log(`起点已同步: ${start}`);
+    }
+  }, [start]);
 
   useEffect(() => {
     if (end) {
-      handleSelectEnd(end);
+      setEndBuilding(end);
+      setEndQuery(end);
+      setEndResults([]);
+      console.log(`终点已同步: ${end}`);
     }
   }, [end]);
 
-
-
-  // 获取建筑的中心坐标
+  // 获取建筑坐标（中文名称）
   const getBuildingCoordinates = (buildingName) => {
     if (!geoData?.features) return null;
     const feature = geoData.features.find(f => {
@@ -52,7 +73,6 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
 
     if (!feature || !feature.geometry) return null;
 
-    // 计算几何中心
     let coordinates = [];
     if (feature.geometry.type === 'Polygon') {
       coordinates = feature.geometry.coordinates[0];
@@ -64,7 +84,6 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
 
     if (coordinates.length === 0) return null;
 
-    // 计算边界框中心
     let minLat = coordinates[0][1];
     let maxLat = coordinates[0][1];
     let minLng = coordinates[0][0];
@@ -114,12 +133,22 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
     setStartQuery(building);
     setStartResults([]);
 
-    // 高亮起点（蓝色）
+    // 清除之前的起点高亮
+    if (previousHighlightsRef.current.start && mapRef?.current?.clearHighlight) {
+      try {
+        mapRef.current.clearHighlight(previousHighlightsRef.current.start);
+      } catch (e) {
+        console.warn('清除起点高亮失败');
+      }
+    }
+
+    // 高亮新的起点
     if (mapRef?.current?.highlightBuildingWithColor) {
       try {
-        mapRef.current.highlightBuildingWithColor(building, '#3b82f6'); // 蓝色
+        mapRef.current.highlightBuildingWithColor(building, '#3b82f6');
+        previousHighlightsRef.current.start = building;
       } catch (e) {
-        console.warn('高亮起点失败:', e);
+        console.warn('高亮起点失败');
       }
     }
   };
@@ -130,18 +159,29 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
     setEndQuery(building);
     setEndResults([]);
 
-    // 高亮终点（红色）
+    // 清除之前的终点高亮
+    if (previousHighlightsRef.current.end && mapRef?.current?.clearHighlight) {
+      try {
+        mapRef.current.clearHighlight(previousHighlightsRef.current.end);
+      } catch (e) {
+        console.warn('清除终点高亮失败');
+      }
+    }
+
+    // 高亮新的终点
     if (mapRef?.current?.highlightBuildingWithColor) {
       try {
-        mapRef.current.highlightBuildingWithColor(building, '#ef4444'); // 红色
+        mapRef.current.highlightBuildingWithColor(building, '#ef4444');
+        previousHighlightsRef.current.end = building;
       } catch (e) {
-        console.warn('高亮终点失败:', e);
+        console.warn('高亮终点失败');
       }
     }
   };
 
   // 清除路线
   const handleClearRoute = () => {
+    // 清除所有状态
     setStartBuilding(null);
     setEndBuilding(null);
     setStartQuery('');
@@ -157,19 +197,21 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
         mapRef.current.removeRoute(routeLineRef.current);
         routeLineRef.current = null;
       } catch (e) {
-        console.warn('清除路线失败:', e);
+        console.warn('清除路线失败');
       }
     }
 
-    // 清除高亮
-    if (mapRef?.current?.clearHighlight) {
+    // 重置地图上的所有高亮和交互状态
+    if (mapRef?.current?.resetRouteHighlights) {
       try {
-        mapRef.current.clearHighlight(startBuilding);
-        mapRef.current.clearHighlight(endBuilding);
+        mapRef.current.resetRouteHighlights();
+        console.log('路线高亮已重置');
       } catch (e) {
-        console.warn('清除高亮失败:', e);
+        console.warn('重置高亮失败:', e.message);
       }
     }
+
+    previousHighlightsRef.current = { start: null, end: null };
   };
 
   // 生成路线
@@ -177,6 +219,16 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
     if (!startBuilding || !endBuilding) {
       alert('请选择起点和终点');
       return;
+    }
+
+    // 先清除旧路线
+    if (routeLineRef.current && mapRef?.current?.removeRoute) {
+      try {
+        mapRef.current.removeRoute(routeLineRef.current);
+        routeLineRef.current = null;
+      } catch (e) {
+        console.warn('清除旧路线失败');
+      }
     }
 
     const startCoords = getBuildingCoordinates(startBuilding);
@@ -188,9 +240,8 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
     }
 
     try {
-      // 调用 OSRM API 获取路线
       const response = await fetch(
-        `https://router.project-osrm.org/route/v1/driving/${startCoords[1]},${startCoords[0]};${endCoords[1]},${endCoords[0]}?overview=full&geometries=geojson`
+        `https://router.project-osrm.org/route/v1/bike/${startCoords[1]},${startCoords[0]};${endCoords[1]},${endCoords[0]}?overview=full&geometries=geojson`
       );
 
       if (!response.ok) {
@@ -201,13 +252,12 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
 
       if (data.routes && data.routes.length > 0) {
         const route = data.routes[0];
-        const distance = (route.distance / 1000).toFixed(2); // 转换为 km
-        const duration = Math.round(route.duration / 60); // 转换为分钟
+        const distance = (route.distance / 1000).toFixed(2);
+        const duration = Math.round(route.duration / 60);
 
         setRouteDistance(distance);
         setRouteDuration(duration);
 
-        // 在地图上绘制路线
         if (mapRef?.current?.drawRoute) {
           try {
             const routeCoordinates = route.geometry.coordinates.map(coord => [coord[1], coord[0]]);
@@ -230,13 +280,13 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
       {/* 起点搜索 */}
       <div>
         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          起点
+          {language === 'en' ? 'Start' : '起点'}
         </label>
         <div className="relative">
           <MapPin className="absolute left-3 top-3 w-5 h-5 text-blue-400" />
           <input
             type="text"
-            placeholder="选择起点..."
+            placeholder={language === 'en' ? 'Select start or click on map...' : '选择起点或在地图点击...'}
             value={startQuery}
             onChange={(e) => handleStartSearch(e.target.value)}
             className="w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:text-white"
@@ -254,7 +304,6 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
           )}
         </div>
 
-        {/* 起点搜索结果 */}
         {startResults.length > 0 && (
           <div className="mt-2 border border-gray-300 dark:border-gray-600 rounded-lg overflow-y-auto max-h-40 bg-white dark:bg-slate-800">
             {startResults.map((building, index) => (
@@ -265,27 +314,27 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
                   startBuilding === building ? 'bg-blue-100 dark:bg-blue-900' : ''
                 }`}
               >
-                <p className="text-sm font-medium text-gray-900 dark:text-white">{building}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-white">{language === 'en' ? (buildingNameMapRef.current.get(building) || building) : building}</p>
               </div>
             ))}
           </div>
         )}
 
         {startBuilding && (
-          <p className="text-sm text-blue-600 dark:text-blue-400 mt-2">✓ 已选择: {startBuilding}</p>
+          <p className="text-sm text-blue-600 dark:text-blue-400 mt-2">✓ {language === 'en' ? 'Selected' : '已选择'}: {language === 'en' ? (buildingNameMapRef.current.get(startBuilding) || startBuilding) : startBuilding}</p>
         )}
       </div>
 
       {/* 终点搜索 */}
       <div>
         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          终点
+          {language === 'en' ? 'End' : '终点'}
         </label>
         <div className="relative">
           <MapPin className="absolute left-3 top-3 w-5 h-5 text-red-400" />
           <input
             type="text"
-            placeholder="选择终点..."
+            placeholder={language === 'en' ? 'Select end or click on map...' : '选择终点或在地图点击...'}
             value={endQuery}
             onChange={(e) => handleEndSearch(e.target.value)}
             className="w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-slate-800 dark:text-white"
@@ -303,7 +352,6 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
           )}
         </div>
 
-        {/* 终点搜索结果 */}
         {endResults.length > 0 && (
           <div className="mt-2 border border-gray-300 dark:border-gray-600 rounded-lg overflow-y-auto max-h-40 bg-white dark:bg-slate-800">
             {endResults.map((building, index) => (
@@ -314,14 +362,14 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
                   endBuilding === building ? 'bg-red-100 dark:bg-red-900' : ''
                 }`}
               >
-                <p className="text-sm font-medium text-gray-900 dark:text-white">{building}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-white">{language === 'en' ? (buildingNameMapRef.current.get(building) || building) : building}</p>
               </div>
             ))}
           </div>
         )}
 
         {endBuilding && (
-          <p className="text-sm text-red-600 dark:text-red-400 mt-2">✓ 已选择: {endBuilding}</p>
+          <p className="text-sm text-red-600 dark:text-red-400 mt-2">✓ {language === 'en' ? 'Selected' : '已选择'}: {language === 'en' ? (buildingNameMapRef.current.get(endBuilding) || endBuilding) : endBuilding}</p>
         )}
       </div>
 
@@ -329,7 +377,15 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
       {routeDistance && routeDuration && (
         <div className="p-3 bg-green-50 dark:bg-green-900 rounded-lg border border-green-200 dark:border-green-700">
           <p className="text-sm text-green-800 dark:text-green-200">
-            <strong>距离:</strong> {routeDistance} km | <strong>时间:</strong> {routeDuration} 分钟
+            {language === 'en' ? (
+              <>
+                <strong>Distance:</strong> {routeDistance} km | <strong>Time:</strong> {routeDuration} min
+              </>
+            ) : (
+              <>
+                <strong>距离:</strong> {routeDistance} km | <strong>时间:</strong> {routeDuration} 分钟
+              </>
+            )}
           </p>
         </div>
       )}
@@ -341,13 +397,13 @@ export default function RouteNavigation({ mapRef, geoData, start, end}) {
           className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors"
         >
           <ArrowRight className="w-4 h-4" />
-          生成路线
+          {language === 'en' ? 'Generate Route' : '生成路线'}
         </button>
         <button
           onClick={handleClearRoute}
           className="flex-1 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors"
         >
-          清除
+          {language === 'en' ? 'Clear' : '清除'}
         </button>
       </div>
     </div>

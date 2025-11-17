@@ -1,7 +1,7 @@
 import React from 'react';
-import { Sun, Moon, Globe, Box } from 'lucide-react';
+import { Sun, Moon, Globe, Bike } from 'lucide-react';
 
-export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, on3DToggle, is3D }) {
+export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, onBikeRouteClick }) {
   return (
     <div className="bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-600 dark:from-sky-950 dark:via-blue-950 dark:to-indigo-950 text-white shadow-lg">
       <div className="px-6 py-4 flex items-center justify-between">
@@ -9,7 +9,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
         <div className="flex items-center gap-3">
           <div className="text-2xl font-bold">🗺️</div>
           <div>
-            <h1 className="text-lg font-bold">西南交通大学</h1>
+            <h1 className="text-lg font-bold">{language === 'en' ? 'Southwest Jiaotong University' : '西南交通大学'}</h1>
             <p className="text-xs opacity-90">Xipu Campus</p>
           </div>
         </div>
@@ -20,7 +20,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           <button
             onClick={onThemeToggle}
             className="p-2 rounded-lg transition-colors"
-            title={theme === 'light' ? '切换到暗色' : '切换到亮色'}
+            title={theme === 'light' ? (language === 'en' ? 'Switch to dark' : '切换到暗色') : (language === 'en' ? 'Switch to light' : '切换到亮色')}
           >
             {theme === 'light' ? (
               <Moon className="w-5 h-5 hover:text-sky-300 hover:scale-125 duration-300 transition-all" />
@@ -33,20 +33,20 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           <button
             onClick={onLanguageToggle}
             className="p-2 hover:scale-125 rounded-lg flex items-center gap-1 duration-300 transition-all"
-            title="切换语言"
+            title={language === 'en' ? '切换语言' : 'Switch Language'}
           >
             <Globe className="w-5 h-5" />
             <span className="text-sm font-medium">{language === 'zh' ? 'EN' : '中'}</span>
           </button>
 
-          {/* 3D/2D切换 */}
+          {/* 自行车路线规划 */}
           <button
-            onClick={on3DToggle}
+            onClick={onBikeRouteClick}
             className="p-2 rounded-lg flex items-center gap-1 transition-all hover:scale-125 duration-300"
-            title={is3D ? '切换到2D' : '切换到3D'}
+            title={language === 'en' ? 'Peak Hour Bike Routes' : '高峰期自行车路线'}
           >
-            <Box className="w-5 h-5" />
-            <span className="text-sm font-medium">{is3D ? '3D' : '2D'}</span>
+            <Bike className="w-5 h-5" />
+            <span className="text-sm font-medium">🚲</span>
           </button>
 
           {/* 分隔线 */}

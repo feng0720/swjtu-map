@@ -3,17 +3,22 @@ import ReservationModal from './ReservationModal';
 import ReservationHistory from './ReservationHistory';
 import { MapPin, Clock, Phone } from 'lucide-react';
 
-export default function BuildingInfo({ building,language }) {
+export default function BuildingInfo({ building, language }) {
   const [showReservation, setShowReservation] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
 
   if (!building) {
     return (
       <div className="text-gray-500 dark:text-gray-400 text-center py-4">
-        点击建筑查看详情…
+        {language === 'en' ? 'Click a building to view details…' : '点击建筑查看详情…'}
       </div>
     );
   }
+
+  // 根据语言选择描述
+  const displayDescription = language === 'en'
+    ? building.raw?.description_en || building.description || ''
+    : building.description || '';
 
   const isLibrary = building.type === 'library' || building.name?.includes('图书馆');
   const isGym = building.type === 'gym' || building.name?.includes('体育馆') || building.name?.includes('运动');
@@ -29,14 +34,14 @@ export default function BuildingInfo({ building,language }) {
         </h2>
         <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
           <MapPin className="w-4 h-4" />
-          <span>{building.type || '建筑'}</span>
+          <span>{language === 'en' ? (building.type || 'Building') : (building.type || '建筑')}</span>
         </div>
       </div>
 
       {/* 建筑描述 */}
-      {building.description && (
+      {displayDescription && (
         <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed whitespace-pre-wrap">
-          {language==='zh'?building.description:building.description_en}
+          {displayDescription}
         </p>
       )}
 
@@ -46,7 +51,10 @@ export default function BuildingInfo({ building,language }) {
           onClick={() => setShowReservation(true)}
           className="w-full px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors font-semibold text-lg"
         >
-          {isLibrary ? '预约图书馆' : isGym ? '预约体育馆' : '预约事务办理'}
+          {language === 'en'
+            ? (isLibrary ? 'Reserve Library' : isGym ? 'Reserve Gymnasium' : 'Reserve Service')
+            : (isLibrary ? '预约图书馆' : isGym ? '预约体育馆' : '预约事务办理')
+          }
         </button>
       )}
 
@@ -55,7 +63,7 @@ export default function BuildingInfo({ building,language }) {
         onClick={() => setShowHistory(true)}
         className="w-full px-4 py-2 bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors font-medium text-sm"
       >
-        📋 预约记录
+        {language === 'en' ? '📋 Reservation History' : '📋 预约记录'}
       </button>
 
       {/* 模态框 */}
