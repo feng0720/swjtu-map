@@ -17,10 +17,10 @@ export default function BikeRoutePlanner({ isOpen, onClose, mapRef, geoData, lan
       return [
         { id: 1, start: '北区宿舍(在装修)', end: '1号教学楼' },
         { id: 2, start: '北区宿舍(在装修)', end: '2号教学楼' },
-        { id: 3, start: '北区宿舍(在装修)', end: '3号教学楼（含事务办理中心）' },
+        { id: 3, start: '北区宿舍(在装修)', end: '3号教学楼（计算机与人工智能学院）' },
         { id: 4, start: '鸿哲斋4号楼', end: '1号教学楼' },
         { id: 5, start: '鸿哲斋4号楼', end: '2号教学楼' },
-        { id: 6, start: '鸿哲斋4号楼', end: '3号教学楼（含事务办理中心）' },
+        { id: 6, start: '鸿哲斋4号楼', end: '3号教学楼（计算机与人工智能学院）' },
       ];
     } else {
       return [

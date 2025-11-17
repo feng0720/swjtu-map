@@ -4,13 +4,13 @@ import BuildingInfo from './BuildingInfo';
 import SearchBuildings from './SearchBuildings';
 import RouteNavigation from './RouteNavigation';
 
-export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData, activeTab, setActiveTab, start, end, language }) {
+export default function RightSidebar({ selectedBuilding, onSelectBuilding, mapRef, geoData, activeTab, setActiveTab, start, end, language,name,log }) {
   
 
   return (
-    <div className="w-[350px] bg-white dark:bg-slate-900 border-2 border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden shadow-lg flex flex-col">
+    <div className="w-[350px] bg-white bg-gradient-to-b dark:from-sky-950 dark:via-blue-950 dark:to-indigo-950 border-2 border-gray-300 dark:border-gray-700 from-cyan-100 via-sky-100 to-blue-100 rounded-2xl overflow-hidden shadow-lg flex flex-col">
       {/* 标签页切换 */}
-      <div className="flex border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800">
+      <div className="flex border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r">
         <button
           onClick={() => setActiveTab('navigation')}
           className={`flex-1 py-3 px-4 flex items-center justify-center gap-2 font-medium transition-colors ${
