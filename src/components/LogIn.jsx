@@ -38,35 +38,38 @@ export default function LogIn({ log,setLog ,name,setName,language}) {
       <div className="flex flex-col gap-4">
 
         <div className="flex flex-col">
-          <label className="text-sm mb-1">{language==='zh'?'学号':'Student ID'}</label>
+          <label className="text-sm mb-1 dark:text-gray-300">{language==='zh'?'学号':'Student ID'}</label>
           <input
             type="text"
             value={studentId}
             onChange={(e) => setStudentId(e.target.value)}
             className="border p-2 rounded-lg bg-gray-50 dark:bg-slate-800 dark:text-white"
             placeholder={language==='zh'?'请输入学号':'Please enter your student ID.'}
+            onKeyDown={(e)=>e.key==='Enter'&&handleLogin()}
           />
         </div>
 
         <div className="flex flex-col">
-          <label className="text-sm mb-1">{language==='zh'?'姓名':'Name'}</label>
+          <label className="text-sm mb-1 dark:text-gray-300">{language==='zh'?'姓名':'Name'}</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="border p-2 rounded-lg bg-gray-50 dark:bg-slate-800 dark:text-white"
             placeholder={language==='zh'?'请输入姓名':'Please enter your name.'}
+            onKeyDown={(e)=>e.key==='Enter'&&handleLogin()}
           />
         </div>
 
         <div className="flex flex-col">
-          <label className="text-sm mb-1">{language==='zh'?'密码':'Password'}</label>
+          <label className="text-sm mb-1 dark:text-gray-300">{language==='zh'?'密码':'Password'}</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="border p-2 rounded-lg bg-gray-50 dark:bg-slate-800 dark:text-white"
             placeholder={language==='zh'?'请输入密码':'Please enter your Password.'}
+            onKeyDown={(e)=>e.key==='Enter'&&handleLogin()}
           />
         </div>
 

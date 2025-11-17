@@ -7,8 +7,7 @@ import TopNavigation from './components/TopNavigation';
 import RightSidebar from './components/RightSidebar';
 import BikeRoutePlanner from './components/BikeRoutePlanner';
 import LogIn from './components/LogIn';
-import { div } from 'three/tsl';
-
+import Shape from './components/Shape';
 function Main() {
   const { theme, toggleTheme } = useTheme();
   const [selectBuilding, setSelectBuilding] = useState(null);
@@ -19,8 +18,9 @@ function Main() {
   const [end,setEnd] = useState(null);
   const [activeTab, setActiveTab] = useState('navigation'); // 'navigation', 'route', 'search'
   const [showBikeRoutes, setShowBikeRoutes] = useState(false);
-  const [log,setLog] = useState(0);
+  const [log,setLog] = useState(1);
   const [name, setName] = useState("");
+  const [showShape,setShowShape] = useState(false);
   
   // 当mapRef加载完成后，获取geoData
   useEffect(() => {
@@ -47,10 +47,25 @@ function Main() {
         log={log}
         setLog={setLog}
         name={name}
+        showShape={showShape}
+        setShowShape={setShowShape}
       />
+      {/* 人流量可视化图形显示 */}
+      {showShape&&<Shape          
+        theme={theme}
+        onThemeToggle={toggleTheme}
+        language={language}
+        onLanguageToggle={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
+        onBikeRouteClick={() => setShowBikeRoutes(true)}
+        log={log}
+        setLog={setLog}
+        name={name}
+        showShape={showShape}
+        setShowShape={setShowShape}/>}
+
       {log===1&&
       <div className='fixed inset-0  bg-black z-[9999] bg-black/50 backdrop-blur-sm flex items-center justify-center'>
-        <div className='bg-white dark:bg-slate-900 p-6 rounded-lg shadow-2xl w-[30%]'>
+        <div className='bg-white dark:bg-slate-900 p-6 rounded-lg shadow-2xl w-[30%] flex-between'>
           <LogIn log={log} setLog={setLog} name={name} setName={setName} language={language} />
         </div>
       </div>}

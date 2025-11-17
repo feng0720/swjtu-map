@@ -75,8 +75,10 @@
         "building": "school",
         "name": "3号教学楼（计算机与人工智能学院）",
         "type": "multipolygon",
+        "flow": [600, 800, 900, 800, 600, 300, 800, 900, 800, 700, 600, 300, 500, 400, 50],
         "description_en": "College (Primary Users): Shared by all schools of the university.\nFunction (Brief Description): Building No. 3 is a landmark structure on the Southwest Jiaotong University campus, representing the largest investment, highest construction technology content, and most comprehensive functionality in the university's history. Located at the prime site near the campus's east gate entrance, the building, with its tall tower and open podium design, fully embodies the imposing presence of a modern university. Its interior is based on an advanced design concept, equipped with 28 smart classrooms, 48 multimedia classrooms, 823 faculty workspaces and offices, featuring international-standard teaching facilities and user-friendly learning spaces. The building serves not only as a teaching center for students from all majors but also as a significant demonstration of the university's teaching reform, innovation, and modern educational practices, representing the development direction of contemporary higher education in China.\nData: 5-story above-ground podium, 17-story tower, 2 underground floors, total floor area approximately 76,375 sqm, capacity for 5,000+ people.",
         "description": "学院（主要使用对象）：全校各学院共用\n功能（简述）：3号教学楼堪称西南交通大学校园的标志性建筑，是学校建校历史上投资规模最大、建筑科技含量最高、功能最为完整的宏伟建筑。坐落于校园东门入口的黄金位置，该楼以其挺拔的塔楼和开放的裙楼设计，充分展现了现代大学的气势。建筑内部设计理念先进，配备了28间智慧教室、48间多媒体教室、823间教师工作间和办公用房，拥有国际化的教学设施和人性化的学习空间。该楼不仅是全校各专业学生的教学中心，更是学校教学改革创新和现代化教育实践的重要示范，代表了当代中国高等教育的发展方向。\n数据：地上裙楼5层、塔楼17层、地下2层，建筑面积约76375㎡，可容纳5000+人"
+        
       },
       "geometry": {
         "type": "Polygon",
@@ -197,6 +199,7 @@
         "name": "1号教学楼",
         "name:en": "Teaching Building 1",
         "type": "multipolygon",
+        "flow": [1000, 1500, 2000, 1800, 600, 300, 1800, 2000, 1800, 1600, 1200, 400, 1000, 800, 100],
         "description_en": "College (Primary Users): School of Transportation, School of Aeronautics, School of Civil Engineering, and other schools\nFunction (Brief Description): As the oldest and most prestigious landmark teaching building on campus, Building No. 1 has witnessed the development history of Southwest Jiaotong University. It undertakes the main teaching tasks for multiple foundational courses, laying a solid theoretical foundation for students. The interior features complete functionality, equipped with a spacious and bright independent learning center, several advanced multimedia classrooms, and specialized computer laboratories, creating an elegant and comfortable learning atmosphere. It is not only a hall for knowledge transmission but also an important hub for teacher-student interaction, having cultivated generations of outstanding transportation professionals over the years.\nData: Approximately 4 floors, construction area of about 15,000 sqm, capacity for 2,000+ people.",
         "description": "学院（主要使用对象）：交通运输学院、航空学院、土木学院等多个学院\n功能（简述）：作为学校历史最悠久、最富盛名的标志性教学建筑，1号教学楼见证了西南交大的发展历程。该楼承担着学校多个基础课程的主要教学任务，为广大学生奠定扎实的理论基础。建筑内部功能完整，配备了宽敞明亮的自主学习中心、多间设备先进的多媒体教室和专业的计算机实验室，为学生营造了优雅舒适的学习氛围。这里不仅是知识传递的殿堂，更是师生互动交流的重要枢纽，多年来培养了一批又一批优秀的交通运输人才。\n数据：约4层，建筑面积约15000㎡，可容纳2000+人"
       },
@@ -458,6 +461,7 @@
         "name:en": "Teaching Building 9",
         "short_name": "九教",
         "type": "multipolygon",
+        "flow": [100, 300, 300, 200, 100, 50, 300, 300, 200, 200, 100, 50, 100, 100, 50],
         "description_en": "College (Primary Users): School of Transportation, School of Mechanical Engineering, School of Electrical Engineering, and other schools\nFunction (Brief Description): Building No. 9 is the university's newest modern teaching facility, representing the highest level and latest concepts in contemporary higher education infrastructure. The building features an advanced architectural design concept and a grand exterior, with scientifically planned interior spaces and a rational functional layout. It is equipped with state-of-the-art smart classroom systems, advanced multimedia classrooms, specialized laboratories, and other first-class teaching facilities, incorporating information-based teaching methods and modern management systems. This building provides high-quality teaching and learning environments for students from multiple schools, fully demonstrating the university's commitment to educational quality and its forward-looking vision for future development. It stands as an important symbol and achievement of the modernization of the university's education and teaching.\nData: Approximately 7 floors, construction area of about 22,000 sqm, capacity for 2,800+ people.",
         "description": "学院（主要使用对象）：交通运输学院、机械学院、电气学院等多个学院\n功能（简述）：9号教学楼是学校最新建成的现代化教学建筑，代表了当代高等教育设施的最高水平和最新理念。该楼建筑设计理念先进、外观气势恢宏，内部空间科学规划、功能布局合理。楼内配备了最新的智慧教室系统、先进的多媒体教室、专业的实验室等一流的教学设施，引入了信息化教学手段和现代化管理系统。该楼为多个学院的学生提供了优质的教学和学习环境，充分展现了学校对教育质量的执着追求和对未来发展的深远眼光，是学校教育教学现代化的重要标志和成果。\n数据：约7层，建筑面积约22000㎡，可容纳2800+人"
       },
@@ -623,6 +627,7 @@
         "name": "2号教学楼",
         "name:en": "Teaching Building 2",
         "type": "multipolygon",
+        "flow": [1200, 1800, 2200, 2000, 800, 400, 2000, 2200, 1900, 1800, 1400, 500, 1200, 1000, 200],
         "description_en": "College (Primary Users): School of Mechanical Engineering, School of Electrical Engineering, School of Information Science and Technology, and other schools\nFunction (Brief Description): Building No. 2 is an important teaching center of the university, bringing together several schools with distinct engineering characteristics. Renowned for its large scale and comprehensive facilities, the building features scientifically planned interior spaces and numerous fully functional teaching venues. It is equipped with modern multimedia classrooms, various specialized laboratories, and spacious faculty offices, fully meeting the teaching needs of both fundamental theoretical courses and specialized curricula. Here, students can not only delve into theoretical knowledge but also engage in professional experimental practices, achieving a true integration of theory and practice. This building has witnessed the continuous innovation and refinement of the university's teaching models, making it an indispensable component of the university's educational system.\nData: Approximately 5 floors, construction area of about 18,000 sqm, capacity for 1,800+ people.",
         "description": "学院（主要使用对象）：机械学院、电气学院、信息学院等多个学院\n功能（简述）：2号教学楼是学校重要的教学中心，汇聚了工科特色鲜明的多个学院。该楼以其规模宏大、设施完善而闻名，内部空间布局科学合理，拥有众多功能齐全的教学场所。楼内配备了现代化的多媒体教室、各类专业实验室和宽敞的师生办公室，充分满足了基础理论课程和专业课程的教学需求。在这里，学生既能够深入学习理论知识，又能够进行专业的实验实践，真正实现了理论与实践的有机结合。该楼见证了学校教学模式的不断创新和完善，是学校教学体系中不可或缺的重要组成部分。\n数据：约5层，建筑面积约18000㎡，可容纳1800+人"
       },
@@ -843,6 +848,7 @@
         "name": "7号教学楼",
         "name:en": "Teaching Building 7",
         "type": "multipolygon",
+        "flow": [200, 400, 500, 400, 200, 100, 400, 500, 400, 300, 200, 100, 200, 200, 50],
         "description_en": "College (Primary Users): All schools of the university\nFunction (Brief Description): Building No. 7 is located in a prime position in the northern part of the campus, serving as a key physical载体 for the university's information technology strategy. The building is notable for its crucial role in informatization construction. The first and second floors house the university's public computer labs and computing center, boasting strong computational power and data processing capabilities that provide robust technical support for the university's teaching, research, and administrative management. The building is also equipped with multiple versatile classrooms, bright and spacious self-study rooms, and comfortable faculty offices, offering comprehensive working and learning spaces for teachers and students. In the information age, this building plays an indispensable role in promoting the university's digital transformation and building a smart campus.\nData: Approximately 5 floors, construction area of about 12,000 sqm, capacity for 1,600+ people.",
         "description": "学院（主要使用对象）：全校各学院\n功能（简述）：7号教学楼坐落在校园北区的黄金位置，是学校信息技术战略的重要物理载体。该楼以其在信息化建设中的关键作用而备受瞩目，建筑的一层和二层设有学校的公共机房和计算中心，拥有强大的计算能力和数据处理能力，为全校的教学、科研和行政管理工作提供了强有力的技术支撑。楼内还配备了多个功能丰富的教室、宽敞明亮的自习室和舒适的教师办公室，为师生提供了完整的工作和学习空间。在信息时代，该楼在推动学校数字化转型和建设智慧校园中发挥了不可替代的重要作用。\n数据：约5层，建筑面积约12000㎡，可容纳1600+人"
       },
@@ -937,6 +943,7 @@
         "name": "5号教学楼",
         "name:en": "Teaching Building 5",
         "type": "multipolygon",
+        "flow": [400, 600, 700, 600, 300, 200, 600, 700, 600, 500, 400, 200, 300, 200, 50],
         "description_en": "College (Primary Users): Department of Mechanics and related engineering mechanics disciplines\nFunction (Brief Description): Building No. 5 serves as an important teaching and research base for the university's mechanics disciplines, fully demonstrating the university's outstanding achievements and disciplinary advantages in the field of mechanics. The building stands out on campus for its specialized and high-end characteristics, equipped with professional mechanics laboratories, fluid mechanics experiment center, structural mechanics laboratory, and other advanced teaching and research facilities. These facilities not only provide students with comprehensive experimental teaching conditions but also offer strong support for faculty scientific research. Here, students can learn systematic theoretical knowledge of mechanics while conducting in-depth scientific experiments, truly achieving the organic integration of theory and practice, teaching and research, and cultivating numerous outstanding professionals in the field of mechanics.\nData: Approximately 6 floors, construction area of about 16,000 sqm, capacity for 2,200+ people.",
         "description": "学院（主要使用对象）：力学系及工程力学相关学科\n功能（简述）：5号教学楼是学校力学学科的重要教学和科研基地，充分展现了学校在力学领域的卓越成就和学科优势。该楼以其专业化、高端化的特点而在校园中独树一帜，配备了专业的力学实验室、流体力学实验中心、结构力学实验室等先进的教学科研设施。这些设施不仅为学生提供了完整的实验教学条件，也为教师的科学研究提供了有力支撑。在这里，学生既能够学习系统的力学理论知识，又能够进行深入的科学实验，真正实现了理论与实践、教学与科研的有机统一，培养了众多优秀的力学专业人才。\n数据：约6层，建筑面积约16000㎡，可容纳2200+人"
       },
@@ -1134,6 +1141,7 @@
         "name": "4号教学楼",
         "name:en": "Teaching Building 4",
         "type": "multipolygon",
+        "flow": [500, 700, 800, 700, 400, 200, 700, 800, 700, 600, 500, 200, 400, 300, 50],
         "description_en": "College (Primary Users): School of Political Science, School of Civil Engineering, School of Geoscience and Environmental Engineering\nFunction (Brief Description): Building No. 4 is the largest and most functionally comprehensive teaching building in the Xipu Campus, renowned throughout the campus for its massive capacity and complete functionality. The building brings together offices and teaching spaces for multiple schools, integrating teaching, research, administration, and cultural exhibition, fully embodying the characteristics of a modern comprehensive university building. It contains a large number of multimedia classrooms and various specialized laboratories, providing students with first-class learning conditions. Particularly noteworthy is its function as the university history museum, making it an important showcase window for the university's history and culture. Here, students can not only engage in learning but also learn about the university's glorious traditions and development history, achieving an organic integration of teaching and cultural heritage.\nData: Approximately 8 floors, construction area of about 25,000 sqm, capacity for 3,500+ people.",
         "description": "学院（主要使用对象）：政治学院、土木学院、地球科学与环境工程学院\n功能（简述）：4号教学楼是犀浦校区规模最宏大、功能最为丰富的教学建筑，以其容纳人数众多和功能完整而享誉校园。该楼汇聚了多个学院的办公室和教学场所，集教学、科研、行政、文化展示于一体，充分体现了现代综合型大学建筑的特点。楼内拥有数量众多的多媒体教室、各类专业实验室，为学生提供了一流的学习条件。特别是其承载的校史馆功能，使其成为学校历史文化的重要展示窗口，学生在这里既能进行学习，又能了解学校的光荣传统和发展历程，形成了教学与文化传承的有机融合。\n数据：约8层，建筑面积约25000㎡，可容纳3500+人"
       },
@@ -1424,6 +1432,7 @@
         "name": "6号教学楼",
         "name:en": "Teaching Building 6",
         "type": "multipolygon",
+        "flow": [300, 500, 600, 500, 200, 100, 500, 600, 500, 400, 300, 100, 200, 200, 50],
         "description_en": "College (Primary Users): Engineering Mechanics, Applied Physics, Electronic Information, and other engineering disciplines\nFunction (Brief Description): Building No. 6 is an important experimental center for the university's engineering education, concentrating advanced teaching facilities for multiple engineering disciplines, fully demonstrating the comprehensive strength of the university's engineering education. The building houses well-equipped, professionally managed experimental platforms including a fluid mechanics laboratory, physics experiment center, and electronic/electrical engineering experiment center, all featuring complete facilities and advanced instrumentation. These laboratories provide high-quality support for students' experimental teaching and engineering practice training. Here, students can not only conduct various hands-on experiments but also engage with cutting-edge engineering technologies, developing solid practical engineering abilities and innovative thinking. It serves as a cradle for cultivating engineering professionals at the university.\nData: Approximately 7 floors, construction area of about 20,000 sqm, capacity for 2,600+ people.",
         "description": "学院（主要使用对象）：工程力学、应用物理、电子信息等工程类学科\n功能（简述）：6号教学楼是学校工程教育的重要实验中心，集中了多个工程类学科的先进教学设施，充分体现了学校工程教育的综合实力。该楼拥有设施完善、仪器先进的流体力学实验室、物理实验中心、电子电工实验中心等多个专业实验平台，这些实验室设备齐全、管理规范，为学生的实验教学和工程实践训练提供了优质的保障。在这里，学生不仅能够动手进行各类实验操作，还能够接触最前沿的工程技术，培养了扎实的工程实践能力和创新意识，是学校工程类专业人才培养的摇篮。\n数据：约7层，建筑面积约20000㎡，可容纳2600+人"
       },
@@ -2882,6 +2891,7 @@
         "@id": "way/413859253",
         "building": "dormitory",
         "name": "天佑斋7号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 7",
         "name:zh": "天佑斋7号楼"
       },
@@ -2920,6 +2930,7 @@
         "@id": "way/413859254",
         "building": "dormitory",
         "name": "天佑斋6号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 6",
         "name:zh": "天佑斋6号楼"
       },
@@ -2958,6 +2969,7 @@
         "@id": "way/413859258",
         "building": "dormitory",
         "name": "天佑斋9号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 9",
         "name:zh": "天佑斋9号楼"
       },
@@ -3004,6 +3016,7 @@
         "@id": "way/413859263",
         "building": "dormitory;yes",
         "name": "天佑斋11号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 11",
         "name:zh": "天佑斋11号楼"
       },
@@ -3057,6 +3070,7 @@
         "name": "四食堂（馨园）",
         "name:en": "Canteen No. 4",
         "name:zh": "四食堂（馨园）",
+        "flow": [900, 600, 300, 700, 2200, 1800, 300, 0, 0, 1200, 2000, 1200, 300, 0, 0],
         "description_en": "Name: Canteen 4 (Xinyuan)\nCuisine: Cold Dish Counter, Weight-loss Meal Counter, Spicy Hot Pot, Various Affordable Noodles, Assorted Home-style Dishes\nAverage Price: 6-15 RMB\nCrowd Density: Very High\nReputation: The first floor is economical and affordable, the second floor has relatively higher prices with private rooms. It is the most popular canteen, offering the cheapest prices, diverse food options, and a comfortable environment.",
         "description": "名称：四食堂（馨园）\n美食：凉拌菜窗口、减脂餐窗口、麻辣烫、各类便宜小面、各式家常菜\n均价：6-15元\n用餐密集程度：很高\n风评：一楼经济实惠、二楼消费相对较高有包间，是最受欢迎的食堂，价格最便宜，菜品丰富，环境舒适"
       },
@@ -3137,6 +3151,7 @@
         "lanes": "8",
         "leisure": "track",
         "name": "北区体育场",
+        "flow": [2000, 2500, 2250, 2250, 2000, 1000, 1750, 1500, 3000, 1500, 1000, 2500, 1500, 2500, 1000],
         "description_en": "Name: North District Sports Field\nFunction: The university's main track and field venue, hosting sports meets and athletic training\nData: Standard 400-meter 8-lane track, central football field, capacity for 5,000+ people",
         "description": "名称：北区体育场\n功能：学校田径运动主场，承办运动会和田径训练\n数据：标准400米八车道跑道，中心足球场，可容纳5000+人"
       },
@@ -3755,6 +3770,7 @@
         "@id": "way/535892698",
         "building": "dormitory",
         "name": "鸿哲斋7号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Hongzhe Zhai Building 7",
         "name:zh": "鸿哲斋7号楼"
       },
@@ -3824,6 +3840,7 @@
       "properties": {
         "@id": "way/535892699",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "鸿哲斋6号楼",
         "name:en": "Hongzhe Zhai Building 6"
       },
@@ -3893,6 +3910,7 @@
       "properties": {
         "@id": "way/535892700",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "鸿哲斋5号楼",
         "name:en": "Hongzhe Zhai Building 5"
       },
@@ -3962,6 +3980,7 @@
       "properties": {
         "@id": "way/535892701",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "鸿哲斋4号楼",
         "name:en": "Hongzhe Zhai Building 4"
       },
@@ -4031,6 +4050,7 @@
       "properties": {
         "@id": "way/584261708",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "鸿哲斋11号楼",
         "name:zh": "鸿哲斋11号楼"
       },
@@ -4068,6 +4088,7 @@
       "properties": {
         "@id": "way/584261710",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "鸿哲斋10号楼",
         "name:zh": "鸿哲斋10号楼"
       },
@@ -4105,6 +4126,7 @@
       "properties": {
         "@id": "way/584261711",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "鸿哲斋9号楼",
         "name:zh": "鸿哲斋9号楼"
       },
@@ -4142,6 +4164,7 @@
       "properties": {
         "@id": "way/584261713",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "鸿哲斋8号楼",
         "name:zh": "鸿哲斋8号楼"
       },
@@ -4379,6 +4402,7 @@
         "layer": "1",
         "name": "西南交通大学犀浦校区图书馆",
         "name:zh": "图书馆",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "description_en": "Name: Southwest Jiaotong University Xipu Campus Library\nBrief Description: The university's most important literature and information center, featuring a grand building with rich collections. It holds over 2 million physical books and more than 100 electronic resource databases, providing professional information services for all faculty and students. The library contains various functional areas including self-study zones, discussion rooms, and multimedia learning centers, serving as an important base for students' independent learning and academic research.\nOpening Hours: Monday to Sunday 8:00-22:00\nSpecial Services: Interlibrary loan, Subject consultation, Thesis duplication checking, Book recommendations",
         "description": "名称：西南交通大学犀浦校区图书馆\n简述：学校最重要的文献信息中心，馆舍宏大、藏书丰富。拥有纸质图书200万余册，电子资源数据库100余个，为全校师生提供专业的信息服务。馆内设有自习区、研讨室、多媒体学习中心等多种功能区域，是学生自主学习和学术研究的重要阵地。\n开放时间：周一至周日 8:00-22:00\n特色服务：馆际互借、学科咨询、论文查重、图书推荐"
       },
@@ -4628,6 +4652,7 @@
         "name:en": "Teaching Building 8",
         "name:zh": "8号教学楼",
         "short_name": "八教",
+        "flow": [200, 400, 400, 300, 200, 100, 400, 400, 300, 300, 200, 50, 200, 100, 50],
         "description_en": "College (Primary Users): School of Architecture, School of Art and Communication\nFunction (Brief Description): Building No. 8 is an important teaching base for the university's distinctive disciplines, carrying the teaching tasks for creative subjects such as architecture and art design. The building features novel architectural design and advanced concepts, with interior spaces including spacious professional studios, fully functional design laboratories, art exhibition halls, and other specialized teaching areas, providing an ideal environment for students' creative design and artistic creation. It brings together excellent faculty in architecture and arts, cultivating numerous creative talents with innovative spirit and international competitiveness. The building fully embodies the characteristics and advantages of creative education, serving as an important support for the university's innovative talent cultivation and disciplinary development, while also playing a significant aesthetic leadership role in campus culture construction.\nData: Approximately 6 floors, construction area of about 18,000 sqm, capacity for 2,000+ people",
         "description": "学院（主要使用对象）：建筑学院、艺术与传播学院\n功能（简述）：8号教学楼是学校特色学科的重要教学基地，承载着建筑学和艺术设计等创意学科的教学任务。该楼建筑设计新颖、理念先进，内部设有宽敞的专业工作室、功能完善的设计实验室、艺术展览厅等特色教学空间，为学生的创意设计和艺术创作提供了理想的环境。这里汇聚了优秀的建筑和艺术师资，培养了众多具有创新精神和国际竞争力的创意人才。该楼充分体现了创意教育的特点和优势，是学校创新人才培养和学科建设的重要依托，在校园文化建设中也发挥了重要的审美引领作用。\n数据：约6层，建筑面积约18000㎡，可容纳2000+人"
       },
@@ -4862,6 +4887,7 @@
         "@id": "way/1098786995",
         "leisure": "stadium",
         "name": "南区体育场",
+        "flow": [2000, 2500, 2250, 2250, 2000, 1000, 1750, 1500, 3000, 1500, 1000, 2500, 1500, 2500, 1000],
         "description_en": "Name: South District Sports Field\nFunction: Comprehensive sports venue in the university's south district\nData: Area approximately 15,000 sqm, multi-functional sports field, capacity for 3,000+ people",
         "description": "名称：南区体育场\n功能：学校南区综合运动场地\n数据：面积约15000㎡，多功能运动场，可容纳3000+人"
       },
@@ -5240,6 +5266,7 @@
         "building": "yes",
         "name": "二食堂（梁园）",
         "name:en": "Canteen No.2",
+        "flow": [700, 400, 200, 500, 1800, 1400, 200, 0, 0, 1000, 1600, 1000, 200, 0, 0],
         "description_en": "Name: Canteen 2 (Liangyuan)\nCuisine: Grilled Meat Rice, Clay Pot Rice Noodles, Set Meals\nAverage Price: 7-11 RMB\nCrowd Density: Medium\nReputation: High cost-performance ratio, affordable dishes, homely flavors with diverse options. The second floor features various specialty counters like grilled meat rice and clay pot rice noodles",
         "description": "名称：二食堂（梁园）\n美食：烤肉饭、砂锅米线、套餐饭\n均价：7-11元\n用餐密集程度：中等\n风评：性价比高，菜品实惠，口味家常菜品选择丰富，二楼有如烤肉饭、砂锅米线等多样风味窗口，被称为“南区同学的天堂"
       },
@@ -5423,6 +5450,7 @@
         "building": "yes",
         "name": "三食堂（粟园）",
         "name:en": "Cafeteria No.3",
+        "flow": [700, 400, 200, 500, 1800, 1400, 200, 0, 0, 1000, 1600, 1000, 200, 0, 0],
         "description_en": "Name: Canteen 3 (Suyuan)\nCuisine: Halal Lamb Soup, Beef Noodles, Spicy Hand-shredded Chicken, Halal Dishes\nAverage Price: 8-13 RMB\nCrowd Density: Medium\nReputation: After a comprehensive upgrade, it features a modern environment. The second floor is suitable for group dining, even offering dishes like crayfish",
         "description": "名称：三食堂（粟园）\n美食：清真羊肉汤、牛肉面、香辣手撕鸡、清真菜\n均价：8-13元\n用餐密集程度：中等\n风评：经历全面升级，环境现代化，二楼是适合聚餐的餐厅，甚至有小龙虾等菜式，楼下有“地下美食城”"
       },
@@ -5637,6 +5665,7 @@
         "building": "yes",
         "name": "一食堂（黍园）",
         "name:en": "Canteen No.1",
+        "flow": [700, 400, 200, 500, 1800, 1400, 200, 0, 0, 1000, 1600, 1000, 200, 0, 0],
         "description_en": "Name: Canteen 1 (Shuyuan)\nCuisine: Spicy Hot Pot, Boiled Fish, Kung Pao Chicken, Sichuan Cuisine, Vegetarian Dishes, Halal Food\nAverage Price: 8-12 RMB\nCrowd Density: High\nReputation: The first floor offers homestyle set meals and stir-fries, the second floor is a halal restaurant famous for its beef noodles and mao cai (spicy mixed pot), known as the king of cost-performance ratio with authentic flavors.",
         "description": "名称：一食堂（黍园）\n美食：麻辣烫、水煮鱼、宫保鸡丁、川菜、素菜、清真菜\n均价：8-12元\n用餐密集程度：高\n风评：一楼为家常套餐小炒，二楼是清真餐厅，牛肉拉面和冒菜很有名，性价比之王、口味地道"
       },
@@ -5951,6 +5980,7 @@
         "building": "dormitory",
         "layer": "1",
         "name": "天佑斋3号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 3",
         "name:zh": "天佑斋3号楼"
       },
@@ -6077,6 +6107,7 @@
         "@id": "way/1098823505",
         "building": "dormitory",
         "name": "天佑斋4号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 4",
         "name:zh": "天佑斋4号楼"
       },
@@ -6151,6 +6182,7 @@
         "@id": "way/1098823507",
         "building": "dormitory",
         "name": "天佑斋14号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 14",
         "name:zh": "天佑斋14号楼"
       },
@@ -6205,6 +6237,7 @@
         "@id": "way/1098823508",
         "building": "dormitory",
         "name": "天佑斋12号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 12",
         "name:zh": "天佑斋12号楼"
       },
@@ -6259,6 +6292,7 @@
         "@id": "way/1098823509",
         "building": "dormitory",
         "name": "天佑斋10号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 10",
         "name:zh": "天佑斋10号楼"
       },
@@ -6297,6 +6331,7 @@
         "@id": "way/1099258263",
         "building": "dormitory",
         "name": "天佑斋13号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 13",
         "name:zh": "天佑斋13号楼"
       },
@@ -6351,6 +6386,7 @@
         "@id": "way/1099340039",
         "building": "dormitory",
         "name": "天佑斋8号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 8",
         "name:zh": "天佑斋8号楼"
       },
@@ -6404,6 +6440,7 @@
       "properties": {
         "@id": "way/1099340056",
         "building": "dormitory",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name": "天佑斋2号楼",
         "name:en": "Tianyouzhai Building 2"
       },
@@ -6566,6 +6603,7 @@
         "@id": "way/1099340057",
         "building": "dormitory",
         "name": "天佑斋1号楼",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "name:en": "Tianyouzhai Building 1"
       },
       "geometry": {
@@ -6764,6 +6802,7 @@
         "landuse": "residential",
         "residential": "apartments",
         "name": "北区宿舍(在装修)",
+        "flow": [3000, 1500, 1000, 1000, 1000, 4500, 2000, 2500, 1500, 1000, 1500, 3000, 4500, 4500, 8500],
         "description_en": "Construction is being carried out even while students are residing here, which is really unreasonable.",
         "description": "有学生住还搞装修依托构式"
       },

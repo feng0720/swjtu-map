@@ -21,6 +21,7 @@ const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, se
   const activeTabRef = useRef(activeTab);
   const languageRef = useRef(language);
   const currentStartRef = useRef(null); // 追踪当前选定的起点
+  const routeRef = useRef(null); // 保存当前路线 Polyline
 
   // 加载 GeoJSON
   useEffect(() => {
@@ -397,6 +398,10 @@ const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, se
     getGeoData: () => geoData,
     drawRoute: (coordinates, color = '#3b82f6') => {
       const map = mapContainerRef.current;
+      if(routeRef.current){
+        map.removeLayer(routeRef.current);
+        routeRef.current=null;
+      }
       if (map) {
         const polyline = L.polyline(coordinates, {
           color: color,
@@ -405,14 +410,19 @@ const CampusMap = forwardRef(function CampusMap({ onSelectBuilding, setStart, se
           lineCap: 'round',
           lineJoin: 'round'
         }).addTo(map);
+
+        routeRef.current = polyline;
+
         map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
         return polyline;
       }
       return null;
     },
-    removeRoute: (routeLine) => {
-      if (routeLine && routeLine.remove) {
-        routeLine.remove();
+    removeRoute: () => {
+      const map = mapContainerRef.current;
+      if (routeRef.current && map) {
+        map.removeLayer(routeRef.current);
+        routeRef.current = null;
       }
     }
   }));

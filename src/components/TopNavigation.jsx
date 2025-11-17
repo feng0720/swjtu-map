@@ -1,9 +1,9 @@
 import React from 'react';
-import { Sun, Moon, Globe, Bike } from 'lucide-react';
+import { Sun, Moon, Globe, Bike,Activity} from 'lucide-react';
 import light_logo from "../assets/xiaohui.png";
 import dark_logo from "../assets/whitexiaohui.png";
 
-export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, onBikeRouteClick,log,setLog,name}) {
+export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, onBikeRouteClick,log,setLog,name,showShape,setShowShape}) {
   return (
     <div className="bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-600 dark:from-sky-950 dark:via-blue-950 dark:to-indigo-950 text-white shadow-lg">
       <div className="px-6 py-4 flex items-center justify-between">
@@ -49,7 +49,15 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
             title={language === 'en' ? 'Peak Hour Bike Routes' : '高峰期自行车路线'}
           >
             <Bike className="w-5 h-5" />
-            <span className="text-sm font-medium">🚲</span>
+          </button>
+
+          {/* 人流量图表显示 */}
+          <button
+            onClick={()=>{setShowShape(true)}}
+            className="p-2 rounded-lg flex items-center gap-1 transition-all hover:scale-125 duration-300"
+            title={language === 'en' ? 'Peak Hour Bike Routes' : '校园人流量可视化'}
+          >
+            <Activity className="w-5 h-5" />
           </button>
 
           {/* 分隔线 */}
@@ -61,7 +69,14 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           }}>
             {language === 'zh' ? '登录' : 'Login'}
           </button>}
-          {log===2&&<div className="transition-all hover:scale-125 w-full py-2 px-2 hover:bg-cyan-500 text-white rounded-full font-semibold shadow dark:hover:bg-stone-600 ">{name}</div>}
+          {log===2&&<div className="transition-all hover:scale-125 py-2 px-2 hover:bg-cyan-500 text-white rounded-full font-semibold shadow dark:hover:bg-stone-600 text-center">{name}</div>}
+
+          {/* 登出 */}
+          {log===2&&<button className="px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all hover:scale-110 font-medium text-sm" onClick={()=>{
+            setLog(1);
+          }}>
+            {language === 'zh' ? '登出' : 'Logout'}
+          </button>}
         </div>
       </div>
     </div>
