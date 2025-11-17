@@ -16,8 +16,10 @@ export default function LogIn({ log,setLog ,name,setName,language}) {
     console.log("姓名:", name);
     console.log("密码:", password);
 
-    // 登录成功后关闭弹窗
+    // 登录成功后关闭弹窗并保存到localStorage
     setLog(2);
+    localStorage.setItem('loginStatus', '2');
+    localStorage.setItem('userName', name);
   };
 
   return (

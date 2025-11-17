@@ -18,8 +18,13 @@ function Main() {
   const [end,setEnd] = useState(null);
   const [activeTab, setActiveTab] = useState('navigation'); // 'navigation', 'route', 'search'
   const [showBikeRoutes, setShowBikeRoutes] = useState(false);
-  const [log,setLog] = useState(1);
-  const [name, setName] = useState("");
+  const [log,setLog] = useState(() => {
+    const savedLoginStatus = localStorage.getItem('loginStatus');
+    return savedLoginStatus ? parseInt(savedLoginStatus) : 1;
+  });
+  const [name, setName] = useState(() => {
+    return localStorage.getItem('userName') || "";
+  });
   const [showShape,setShowShape] = useState(false);
   
   // 当mapRef加载完成后，获取geoData

@@ -74,6 +74,8 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
           {/* 登出 */}
           {log===2&&<button className="px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all hover:scale-110 font-medium text-sm" onClick={()=>{
             setLog(1);
+            localStorage.removeItem('loginStatus');
+            localStorage.removeItem('userName');
           }}>
             {language === 'zh' ? '登出' : 'Logout'}
           </button>}
