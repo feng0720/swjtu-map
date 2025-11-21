@@ -1,16 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Sun, Moon, Globe, Bike,Activity} from 'lucide-react';
 import light_logo from "../assets/xiaohui.png";
 import dark_logo from "../assets/whitexiaohui.png";
 
 export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, onBikeRouteClick,log,setLog,name,showShape,setShowShape}) {
+  const navigate = useNavigate();
+  console.log('TopNavigation logos:', { theme, light_logo, dark_logo });
   return (
     <div className="bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-600 dark:from-sky-950 dark:via-blue-950 dark:to-indigo-950 text-white shadow-lg">
       <div className="px-6 py-4 flex items-center justify-between">
         {/* 左侧：标题和学校名 */}
         <div className="flex items-center gap-3">
-          {theme==='light'&&<img src={light_logo} alt="西南交大校徽" className='w-32'/>}
-          {theme==='dark'&&<img src={dark_logo} alt='西南交大校徽' className='w-32'/>}
+          {theme==='light'&&<img src={light_logo} alt="西南交大校徽" className='w-32' onError={(e)=>console.error('light_logo failed to load', e.currentTarget.src)} />}
+          {theme==='dark'&&<img src={dark_logo} alt='西南交大校徽' className='w-32' onError={(e)=>console.error('dark_logo failed to load', e.currentTarget.src)} />}
           <div>
             <h1 className="text-lg font-bold">{language === 'en' ? 'Southwest Jiaotong University' : '西南交通大学'}</h1>
             <p className="text-xs opacity-90">Xipu Campus</p>
@@ -51,11 +54,11 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
             <Bike className="w-5 h-5" />
           </button>
 
-          {/* 人流量图表显示 */}
+          {/* 人流量图表显示（路由跳转） */}
           <button
-            onClick={()=>{setShowShape(true)}}
+            onClick={() => navigate('/shape')}
             className="p-2 rounded-lg flex items-center gap-1 transition-all hover:scale-125 duration-300"
-            title={language === 'en' ? 'Peak Hour Bike Routes' : '校园人流量可视化'}
+            title={language === 'en' ? 'Campus pedestrian flow' : '校园人流量可视化'}
           >
             <Activity className="w-5 h-5" />
           </button>
@@ -65,7 +68,7 @@ export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, 
 
           {/* 登录 */}
           {log!==2&&<button className="px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all hover:scale-110 font-medium text-sm" onClick={()=>{
-            setLog(1);
+            navigate('/login');
           }}>
             {language === 'zh' ? '登录' : 'Login'}
           </button>}

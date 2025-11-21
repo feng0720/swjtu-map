@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
-import FlowHeatMap from "./FlowHeatMap";
-import FlowPieChart from "./FlowPieChart";
+import FlowHeatMap from "../components/FlowHeatMap";
+import FlowPieChart from "../components/FlowPieChart";
 import { Sun, Moon, Globe } from "lucide-react";
+import { useTheme } from "../Theme";
+import { useNavigate } from "react-router-dom";
 
-export default function Shape({
-  theme,
-  onThemeToggle,
-  language,
-  onLanguageToggle,
-  log,
-  setLog,
-  name,
-  ShowShape,
-  setShowShape,
-}) {
+export default function Shape() {
+  const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+  const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'zh');
   const [timeIndex, setTimeIndex] = useState(0);
+  const log = parseInt(localStorage.getItem('loginStatus')) || 1;
+  const name = localStorage.getItem('userName') || "";
 
   const formatTime = (index) => {
     const hour = 8 + Math.floor(index);
@@ -46,7 +43,7 @@ export default function Shape({
 
           {/* 光暗模式切换 */}
           <button
-            onClick={onThemeToggle}
+            onClick={toggleTheme}
             className="p-2 rounded-lg transition-all hover:scale-125"
             title={
               theme === "light"
@@ -67,7 +64,11 @@ export default function Shape({
 
           {/* 中英文切换 */}
           <button
-            onClick={onLanguageToggle}
+            onClick={() => {
+              const next = language === 'zh' ? 'en' : 'zh';
+              setLanguage(next);
+              localStorage.setItem('language', next);
+            }}
             className="p-2 hover:scale-125 rounded-lg flex items-center gap-1 transition-all"
           >
             <Globe className="w-5 h-5" />
@@ -134,11 +135,11 @@ export default function Shape({
 
         <div className="flex justify-end">
           <button
-            onClick={() => setShowShape(false)}
+            onClick={() => navigate(-1)}
             className="flex items-center gap-2 px-4 py-2 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-700 rounded-lg text-gray-900 dark:text-white transition-all hover:scale-110"
           >
             <ArrowLeft className="w-4 h-4" />
-            {language==='zh'?"返回":"Backup"}
+            {language==='zh'?'返回':'Back'}
           </button>
         </div>
       </div>
