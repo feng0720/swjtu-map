@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-primitive": "^2.1.4",
     "clsx": "^2.1.1",
     "echarts": "^6.0.0",
     "leaflet": "^1.9.4",
@@ -21,6 +22,7 @@
     "react-leaflet": "^5.0.0",
     "react-map-gl": "^8.1.0",
     "react-router-dom": "^7.9.6",
+    "tailwind-variants": "^3.1.1",
     "three": "^0.181.1"
   },
   "devDependencies": {

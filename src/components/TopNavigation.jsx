@@ -4,7 +4,7 @@ import { Sun, Moon, Globe, Bike,Activity} from 'lucide-react';
 import light_logo from "../assets/xiaohui.png";
 import dark_logo from "../assets/whitexiaohui.png";
 
-export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, onBikeRouteClick,log,setLog,name,showShape,setShowShape}) {
+export default function TopNavigation({ theme, onThemeToggle, onLanguageToggle, language, onBikeRouteClick,log,setLog,name}) {
   const navigate = useNavigate();
   console.log('TopNavigation logos:', { theme, light_logo, dark_logo });
   return (
